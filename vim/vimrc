@@ -1,0 +1,134 @@
+syntax on
+"set backspace=indent,eol,start
+set backspace=indent,eol,start
+"Set Mouse
+"set mouse=a
+"set nu
+"colorscheme zellner
+
+"Custom command
+command EM set mouse=a
+command DM set mouse-=a
+command BIN %!xxd
+
+nmap fd :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap FD :scs find g <C-R>=expand("<cword>")<CR><CR>
+
+""CTAGS Adding
+"set tags+=/home/majm/local_ahab/tags
+"set tags+=/home/nxf32270/cortex_m/stm32_p103_demos/tags
+set tags+=/home/nxf32270/all_in_one/mcurom_src/code/tags
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+""Shortcut Mapping
+map <F4> :TlistToggle<cr>
+map <F2> <C-^>
+map <F3> <C-]>
+map <F5> :NERDTreeTabsToggle<cr>
+map <S-A> :tabnext<cr>
+map <S-Q> :tabp<cr>
+map <S-Z> :tabclose<cr>
+
+"Taglist Configuration
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Ctags_Cmd="/usr/bin/ctags"
+let Tlist_Use_Right_Window=1
+"let Tlist_Auto_Open = 1
+
+""White Space displaycommand SW highlight ExtraWhitespace ctermbg=red guibg=red | autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between here and filetype plugin indent on.
+" scripts on GitHub repos
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-rails.git'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" scripts from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+" scripts not on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+ Plugin 'file:///home/gmarik/path/to/plugin'
+" ...
+
+filetype plugin indent on     " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Plugin commands are not allowed.
+" Put your stuff after this line
+Plugin 'nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Valloric/YouCompleteMe'
+"Bundle "scrooloose/syntastic"
+
+""GBK
+let &termencoding=&encoding
+set fileencodings=utf-8,gb18030,gbk,gb2312,big5
+
+:
+""NERDTree Settings
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+if has("autocmd")
+    au BufReadPost * if line("`\"") > 1 && line("`\"") <= line("$") | exe "normal! g`\"" | endif
+    " for simplicity, "  au BufReadPost * exe "normal! g`\"", is Okay.
+endif
+
+cs add ~/all_in_one/mcurom_src/code/cscope.out
+cs add /home/nxf32270/qemu/cscope.out
+"cs add /home/nxf32270/ulp/mcurom_src/code/cscope.out
+
+"if has("cscope") && filereadable("/usr/bin/cscope")
+"    set csprg=/usr/bin/cscope
+"    set csto=0
+"    set cst
+"    set nocsverb
+"    if filereadable("cscope.out")
+"        cs add cscope.out
+"    elseif $CSCOPE_DB != ""
+"        cs add $CSCOPE_DB
+"    endif
+"    set csverb
+"endif
+
+""ycm
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
