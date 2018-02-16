@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+#define NULL    0
 extern void printk(const char *fmt, ...);
 extern int memset(void *mem, uint8_t val, uint32_t sz);
 extern int memcpy(void *dst, const void *src, uint32_t sz);
@@ -15,8 +16,8 @@ extern uint32_t strlen(char *str);
 extern int strcpy(char *dst, char *src);
 extern void no_printk(const char *fmt, ...);
 
-#define DEBUG
-#ifdef DEBUG
+#define NEED_DEBUG
+#ifdef NEED_DEBUG
 #define DEBUG printk
 #else
 #define DEBUG no_printk

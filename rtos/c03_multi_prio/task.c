@@ -1,21 +1,24 @@
 #include "task.h"
 #include "cm3.h"
 #include "os_stdio.h"
+#include "lib.h"
+#include "config.h"
 
 task_t *g_current_task;
 task_t *g_next_task;
-task_t *g_task_table[2];
+task_t *g_task_table[OS_PRIO_COUNT];
 static task_t g_idle_task_obj;
 static task_t *g_idle_task;
 static task_stack_t g_idle_task_stk[1024];
 static uint8_t g_sched_lock;
+static bitmap_t g_task_prio_bitmap;
 
 static void idle_task_entry(void *param)
 {
     for(;;);
 }
 
-void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t * stack)
+void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio, uint32_t * stack)
 {
     DEBUG("%s\n", __func__);
     *(--stack) = (uint32_t) (1 << 24);          //XPSR, Thumb Mode
@@ -37,46 +40,26 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t * st
 
     task->stack = stack;
     task->delay_ticks = 0;
+    task->prio = prio;
+
+    g_task_table[prio] = task;
+    bitmap_set(&g_task_prio_bitmap, prio);
 }
 
 void task_sched()
 {
     uint32_t status = task_enter_critical();
+    task_t *temp_task_p;
 
     if (g_sched_lock > 0) {
         goto no_need_sched;
     }
 
-    if (g_current_task == g_idle_task) {
-        if (g_task_table[0]->delay_ticks == 0) {
-            g_next_task = g_task_table[0];
-        } else if (g_task_table[1]->delay_ticks == 0) {
-            g_next_task = g_task_table[1];
-        } else {
-            goto no_need_sched;
-        }
-    } else {
-        if (g_current_task == g_task_table[0]) {
-            if (g_task_table[1]->delay_ticks == 0) {
-                g_next_task = g_task_table[1];
-            } else if (g_current_task->delay_ticks != 0) {
-                g_next_task = g_idle_task;
-            } else {
-                goto no_need_sched;
-            }
-        } else if (g_current_task == g_task_table[1]) {
-            if (g_task_table[0]->delay_ticks == 0) {
-                g_next_task = g_task_table[0];
-            } else if (g_current_task->delay_ticks != 0) {
-                g_next_task = g_idle_task;
-            } else {
-                goto no_need_sched;
-            }
-        }
+    temp_task_p = task_highest_ready();
+    if (temp_task_p != g_current_task) {
+        g_next_task = temp_task_p;
+        task_switch();
     }
-
-
-    task_switch();
 
 no_need_sched:
     task_exit_critical(status);
@@ -100,17 +83,29 @@ void task_delay(uint32_t ticks)
 {
     uint32_t status = task_enter_critical();
     g_current_task->delay_ticks = ticks;
-    task_sched();
+    bitmap_clear(&g_task_prio_bitmap, g_current_task->prio);
     task_exit_critical(status);
+    task_sched();
+}
+
+void task_delay_s(uint32_t seconds)
+{
+    task_delay(seconds * 100);
 }
 
 void task_system_tick_handler(void)
 {
-    uint32_t i;
     uint32_t status = task_enter_critical();
-    for (i = 0; i < 2; i++) {
+    uint32_t  i = 0;
+    for (i = 0; i < OS_PRIO_COUNT; i++) {
+        if (g_task_table[i] == (task_t *)NULL) {
+            continue;
+        }
+
         if (g_task_table[i]->delay_ticks > 0) {
             g_task_table[i]->delay_ticks--;
+        } else {
+            bitmap_set(&g_task_prio_bitmap, i);
         }
     }
 
@@ -120,9 +115,11 @@ void task_system_tick_handler(void)
 
 void init_task_module()
 {
-    task_init(&g_idle_task_obj, idle_task_entry, (void *)0, &g_idle_task_stk[1024]);
+    task_init(&g_idle_task_obj, idle_task_entry, (void *)0, OS_PRIO_COUNT - 1,  &g_idle_task_stk[1024]);
     g_idle_task = &g_idle_task_obj;
     g_sched_lock = 0;
+    g_next_task = task_highest_ready();
+    task_run_first();
 }
 
 uint32_t task_enter_critical(void)
@@ -157,4 +154,10 @@ void task_sched_enable(void)
         }
     }
     task_exit_critical(status);
+}
+
+task_t *task_highest_ready()
+{
+    uint32_t highest_prio = bitmap_get_first_set(&g_task_prio_bitmap);
+    return g_task_table[highest_prio];
 }
