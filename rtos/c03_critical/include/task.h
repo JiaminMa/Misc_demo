@@ -22,5 +22,7 @@ extern void task_run_first(void);
 extern void task_delay(uint32_t ticks);
 extern void task_system_tick_handler(void);
 extern void init_task_module(void);
+extern uint32_t task_enter_critical(void);
+extern void task_exit_critical(uint32_t status);
 
 #endif /*TASK_H*/

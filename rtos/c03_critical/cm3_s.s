@@ -10,6 +10,10 @@
 .global get_msp
 .global get_control_reg
 .global pendsv_handler
+.global set_primask
+.global get_primask
+.global disable_irq
+.global enable_irq
 
 /*Import*/
 .global g_current_task
@@ -78,3 +82,19 @@ pendsv_handler_nosave:
     msr     psp, r0
     orr     lr, lr, #0x04   /*Swtich to PSP*/
     bx      lr
+
+get_primask:
+    mrs     r0, PRIMASK
+    blx     lr
+
+set_primask:
+    msr     PRIMASK, r0
+    blx     lr
+
+disable_irq:
+    cpsid   i
+    blx     lr
+
+enable_irq:
+    cpsie   i
+    blx     lr

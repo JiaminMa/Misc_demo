@@ -27,6 +27,10 @@ extern uint32_t get_psp(void);
 extern void set_psp(uint32_t psp);
 extern uint32_t get_msp(void);
 extern uint32_t get_control_reg(void);
+extern uint32_t get_primask(void);
+extern void set_primask(uint32_t primask);
+extern void disable_irq(void);
+extern void enable_irq(void);
 
 extern void init_systick(uint32_t ms);
 extern void trigger_pend_sv(void);

@@ -15,20 +15,37 @@ static inline void clear_bss(void)
     }
 }
 
+uint32_t test_sync_val = 0;
+
 void task1_entry(void *param)
 {
+    uint32_t status = 0;
     init_systick(1000);
     for(;;) {
         printk("%s\n", __func__);
+        status = task_enter_critical();
         task_delay(1);
+        test_sync_val++;
+        task_exit_critical(status);
+        printk("task1:test_sync_val:%d\n", test_sync_val);
     }
 }
 
 void task2_entry(void *param)
 {
+    uint32_t counter = test_sync_val;
+    uint32_t status = 0;
+
     for(;;) {
         printk("%s\n", __func__);
+
+        status = task_enter_critical();
+        counter = test_sync_val;
         task_delay(5);
+        test_sync_val = counter +1;
+        task_exit_critical(status);
+
+        printk("task2:test_sync_val:%d\n", test_sync_val);
     }
 }
 

@@ -113,3 +113,17 @@ void init_task_module()
     g_idle_task = &g_idle_task_obj;
 
 }
+
+
+uint32_t task_enter_critical(void)
+{
+    uint32_t ret = get_primask();
+    disable_irq();
+    return ret;
+}
+
+void task_exit_critical(uint32_t status)
+{
+    set_primask(status);
+    enable_irq();
+}
