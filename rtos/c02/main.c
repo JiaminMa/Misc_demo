@@ -15,26 +15,20 @@ static inline void clear_bss(void)
     }
 }
 
-void delay(uint32_t count)
-{
-    while(--count > 0);
-}
-
 void task1_entry(void *param)
 {
+    init_systick(1000);
     for(;;) {
-        printk("task1_entry\n");
-        delay(65536000);
-        task_sched();
+        printk("%s\n", __func__);
+        task_delay(1);
     }
 }
 
 void task2_entry(void *param)
 {
     for(;;) {
-        printk("task2_entry\n");
-        delay(65536000);
-        task_sched();
+        printk("%s\n", __func__);
+        task_delay(5);
     }
 }
 
@@ -49,7 +43,7 @@ int main()
     systick_t *systick_p = (systick_t *)SYSTICK_BASE;
     clear_bss();
 
-    DEBUG("Hello RTOS\n");
+    DEBUG("Hello RTOS C02.2\n");
     DEBUG("psp:0x%x\n", get_psp());
     DEBUG("msp:0x%x\n", get_msp());
 
@@ -59,6 +53,7 @@ int main()
     g_task_table[0] = &task1;
     g_task_table[1] = &task2;
     g_next_task = g_task_table[0];
+    init_task_module();
 
     task_run_first();
 
