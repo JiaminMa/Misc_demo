@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 #include "config.h"
+#include "lib.h"
+
+#define OS_TASK_STATE_RDY                   0
+#define OS_TASK_STATE_DELAYED               (1 << 1)
 
 typedef uint32_t task_stack_t;
 /*Task Control block*/
@@ -11,6 +15,9 @@ typedef struct task_tag {
     task_stack_t *stack;
     uint32_t delay_ticks;
     uint32_t prio;
+
+    list_node_t delay_node;
+    uint32_t state;
 }task_t;
 
 extern task_t *g_current_task;
@@ -30,5 +37,9 @@ extern void task_exit_critical(uint32_t status);
 extern void task_sched_disable(void);
 extern void task_sched_enable(void);
 extern task_t *task_highest_ready(void);
+extern void task_ready(task_t *task);
+extern void task_unready(task_t *task);
+extern void task_delay_wait(task_t *task, uint32_t ticks);
+extern void task_delay_wakeup(task_t *task);
 
 #endif /*TASK_H*/

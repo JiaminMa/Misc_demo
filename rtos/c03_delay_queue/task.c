@@ -12,6 +12,7 @@ static task_t *g_idle_task;
 static task_stack_t g_idle_task_stk[1024];
 static uint8_t g_sched_lock;
 static bitmap_t g_task_prio_bitmap;
+static list_t g_task_delay_list;
 
 static void idle_task_entry(void *param)
 {
@@ -41,6 +42,9 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio
     task->stack = stack;
     task->delay_ticks = 0;
     task->prio = prio;
+
+    task->state = OS_TASK_STATE_RDY;
+    list_node_init(&task->delay_node);
 
     g_task_table[prio] = task;
     bitmap_set(&g_task_prio_bitmap, prio);
@@ -82,8 +86,14 @@ void task_run_first()
 void task_delay(uint32_t ticks)
 {
     uint32_t status = task_enter_critical();
-    g_current_task->delay_ticks = ticks;
-    bitmap_clear(&g_task_prio_bitmap, g_current_task->prio);
+
+    /*  1.Add task to delay list
+     *  2.Remove the task from task list
+     *  3.Clear the task bit from prioity bitmap
+     * */
+    task_delay_wait(g_current_task, ticks);
+    task_unready(g_current_task);
+
     task_exit_critical(status);
     task_sched();
 }
@@ -96,16 +106,24 @@ void task_delay_s(uint32_t seconds)
 void task_system_tick_handler(void)
 {
     uint32_t status = task_enter_critical();
-    uint32_t  i = 0;
-    for (i = 0; i < OS_PRIO_COUNT; i++) {
-        if (g_task_table[i] == (task_t *)NULL) {
-            continue;
-        }
-
-        if (g_task_table[i]->delay_ticks > 0) {
-            g_task_table[i]->delay_ticks--;
-        } else {
-            bitmap_set(&g_task_prio_bitmap, i);
+    list_node_t *head = &(g_task_delay_list.head);
+    list_node_t *temp_node = head->next;
+    task_t *task = (task_t *)NULL;
+    /*
+     *  For each the delay list, and do:
+     *  1. Self sub the node delay ticks
+     * */
+    while (temp_node != head) {
+        task = container_of(temp_node, task_t, delay_node);
+        temp_node = temp_node->next;
+        if (--task->delay_ticks == 0) {
+            /*
+             *  1.Remove the task from delay list
+             *  2. Add the task to task table
+             *  3.Set the prio bit to bitmap
+             * */
+            task_delay_wakeup(task);
+            task_ready(task);
         }
     }
 
@@ -117,7 +135,10 @@ void init_task_module()
 {
     task_init(&g_idle_task_obj, idle_task_entry, (void *)0, OS_PRIO_COUNT - 1,  &g_idle_task_stk[1024]);
     g_idle_task = &g_idle_task_obj;
+
     g_sched_lock = 0;
+    list_init(&g_task_delay_list);
+
     g_next_task = task_highest_ready();
     task_run_first();
 }
@@ -160,4 +181,29 @@ task_t *task_highest_ready()
 {
     uint32_t highest_prio = bitmap_get_first_set(&g_task_prio_bitmap);
     return g_task_table[highest_prio];
+}
+
+void task_ready(task_t *task)
+{
+    g_task_table[task->prio] = task;
+    bitmap_set(&g_task_prio_bitmap, task->prio);
+}
+
+void task_unready(task_t *task)
+{
+    g_task_table[task->prio] = (task_t *)NULL;
+    bitmap_clear(&g_task_prio_bitmap, task->prio);
+}
+
+void task_delay_wait(task_t *task, uint32_t ticks)
+{
+    task->delay_ticks = ticks;
+    list_insert_head(&g_task_delay_list, &(task->delay_node));
+    task->state |= OS_TASK_STATE_DELAYED;
+}
+
+void task_delay_wakeup(task_t *task)
+{
+    list_remove(&g_task_delay_list, &(task->delay_node));
+    task->state &= ~OS_TASK_STATE_DELAYED;
 }
