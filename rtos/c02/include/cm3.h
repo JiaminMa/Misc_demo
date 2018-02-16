@@ -5,7 +5,7 @@
 #define SCS_BASE            (0xE000E000)                 /*System Control Space Base Address */
 #define SYSTICK_BASE        (SCS_BASE +  0x0010)         /*SysTick Base Address*/
 #define SCB_BASE            (SCS_BASE +  0x0D00)
-#define HSI_CLK             12000000UL
+#define SystemCoreClock     12000000UL
 #define SYSTICK_PRIO_REG    (0xE000ED23)
 
 #define NVIC_INT_CTRL       0xE000ED04
@@ -28,7 +28,7 @@ extern void set_psp(uint32_t psp);
 extern uint32_t get_msp(void);
 extern uint32_t get_control_reg(void);
 
-extern void init_systick(void);
+extern void init_systick(uint32_t ms);
 extern void trigger_pend_sv(void);
 extern void pendsv_handler(void);
 #endif /*CM3_H*/

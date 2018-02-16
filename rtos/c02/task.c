@@ -5,6 +5,14 @@
 task_t *g_current_task;
 task_t *g_next_task;
 task_t *g_task_table[2];
+static task_t g_idle_task_obj;
+static task_t *g_idle_task;
+static task_stack_t g_idle_task_stk[1024];
+
+static void idle_task_entry(void *param)
+{
+    for(;;);
+}
 
 void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t * stack)
 {
@@ -27,17 +35,45 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t * st
     *(--stack) = (uint32_t) 0x4;                //R4
 
     task->stack = stack;
+    task->delay_ticks = 0;
 }
 
 void task_sched()
 {
-    if (g_current_task == g_task_table[0]) {
-        g_next_task = g_task_table[1];
+
+    if (g_current_task == g_idle_task) {
+        if (g_task_table[0]->delay_ticks == 0) {
+            g_next_task = g_task_table[0];
+        } else if (g_task_table[1]->delay_ticks == 0) {
+            g_next_task = g_task_table[1];
+        } else {
+            goto no_need_sched;
+        }
     } else {
-        g_next_task = g_task_table[0];
+        if (g_current_task == g_task_table[0]) {
+            if (g_task_table[1]->delay_ticks == 0) {
+                g_next_task = g_task_table[1];
+            } else if (g_current_task->delay_ticks != 0) {
+                g_next_task = g_idle_task;
+            } else {
+                goto no_need_sched;
+            }
+        } else if (g_current_task == g_task_table[1]) {
+            if (g_task_table[0]->delay_ticks == 0) {
+                g_next_task = g_task_table[0];
+            } else if (g_current_task->delay_ticks != 0) {
+                g_next_task = g_idle_task;
+            } else {
+                goto no_need_sched;
+            }
+        }
     }
 
+
     task_switch();
+
+no_need_sched:
+    return;
 }
 
 void task_switch()
@@ -51,4 +87,29 @@ void task_run_first()
     set_psp(0);
     MEM8(NVIC_SYSPRI2) = NVIC_PENDSV_PRI;
     MEM32(NVIC_INT_CTRL) = NVIC_PENDSVSET;
+}
+
+void task_delay(uint32_t ticks)
+{
+    g_current_task->delay_ticks = ticks;
+    task_sched();
+}
+
+void task_system_tick_handler(void)
+{
+    uint32_t i;
+    for (i = 0; i < 2; i++) {
+        if (g_task_table[i]->delay_ticks > 0) {
+            g_task_table[i]->delay_ticks--;
+        }
+    }
+
+    task_sched();
+}
+
+void init_task_module()
+{
+    task_init(&g_idle_task_obj, idle_task_entry, (void *)0, &g_idle_task_stk[1024]);
+    g_idle_task = &g_idle_task_obj;
+
 }
