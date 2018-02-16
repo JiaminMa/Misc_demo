@@ -11,6 +11,7 @@ extern unsigned long _stack_bottom;
 extern unsigned long _stack_top;
 extern void reset_handler(void);
 extern void systick_handler(void);
+extern void pendsv_handler(void);
 
 __attribute__ ((section(".isr_vector")))void (*g_pfnVectors[])(void) =
 {
@@ -28,8 +29,8 @@ __attribute__ ((section(".isr_vector")))void (*g_pfnVectors[])(void) =
     IntDefaultHandler,                      // SVCall handler
     IntDefaultHandler,                      // Debug monitor handler
     0,                                      // Reserved
-    IntDefaultHandler,                      // The PendSV handler
-    systick_handler,                      // The SysTick handler
+    ((unsigned int)pendsv_handler + 1),     // The PendSV handler
+    systick_handler,                        // The SysTick handler
     IntDefaultHandler,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C

@@ -1,4 +1,5 @@
 #include "cm3.h"
+#include "os_stdio.h"
 
 void init_systick()
 {
@@ -10,3 +11,14 @@ void init_systick()
     systick_p->ctrl = 0x7;
 }
 
+void systick_handler(void)
+{
+    DEBUG("systick_handler\n");
+}
+
+void trigger_pend_sv(void)
+{
+    MEM8(NVIC_SYSPRI2) = NVIC_PENDSV_PRI; /*Set PENDSVC loweset priority*/
+    //MEM32(NVIC_INT_CTRL) = NVIC_PENDSVSET; /*Trigger PendSV*/
+    *((uint32_t volatile *)0xE000ED04) = 0x10000000;
+}

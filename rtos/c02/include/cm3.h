@@ -8,6 +8,14 @@
 #define HSI_CLK             12000000UL
 #define SYSTICK_PRIO_REG    (0xE000ED23)
 
+#define NVIC_INT_CTRL       0xE000ED04
+#define NVIC_PENDSVSET      0x10000000
+#define NVIC_SYSPRI2        0xE000ED22
+#define NVIC_PENDSV_PRI     0x000000FF
+
+#define MEM32(addr)         *(volatile uint32_t *)(addr)
+#define MEM8(addr)          *(volatile uint8_t *)(addr)
+
 typedef struct systick_tag {
     volatile uint32_t ctrl;
     volatile uint32_t load;
@@ -16,8 +24,11 @@ typedef struct systick_tag {
 }systick_t;
 
 extern uint32_t get_psp(void);
+extern void set_psp(uint32_t psp);
 extern uint32_t get_msp(void);
 extern uint32_t get_control_reg(void);
 
 extern void init_systick(void);
+extern void trigger_pend_sv(void);
+extern void pendsv_handler(void);
 #endif /*CM3_H*/
