@@ -9,6 +9,7 @@
 typedef enum event_type_tag {
     EVENT_TYPE_UNKNOWN  = 0,
     EVENT_TYPE_SEM      = 1,
+    EVENT_TYPE_MAILBOX  = 2,
 }event_type_e;
 
 typedef struct event_tag {
