@@ -33,6 +33,15 @@ typedef struct task_tag {
     uint8_t request_del_flag;
 }task_t;
 
+typedef struct task_info_tag {
+
+    uint32_t delay_ticks;
+    uint32_t prio;
+    uint32_t state;
+    uint32_t slice;
+    uint32_t suspend_cnt;
+}task_info_t;
+
 extern task_t *g_current_task;
 extern task_t *g_next_task;
 extern list_t g_task_table[OS_PRIO_COUNT];
@@ -61,6 +70,7 @@ extern void task_force_delete(task_t *task);
 extern void task_request_delete(task_t *task);
 extern uint8_t is_task_request_delete(void);
 extern void task_delete_self(void);
-
+extern void task_get_info(task_t *task, task_info_t *info);
+extern void dump_task_info(task_info_t *info);
 
 #endif /*TASK_H*/

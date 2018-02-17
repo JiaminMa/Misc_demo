@@ -32,12 +32,12 @@ void task1_cleanup_func(void *param)
 void task1_entry(void *param)
 {
     init_systick(10);
-
+    task_info_t task_info;
     task_set_clean_callbk(g_current_task, task1_cleanup_func, (void *)0);
     for(;;) {
-        printk("%s:before delay\n", __func__);
-        task_delay_s(1);
-        printk("%s:after delay\n", __func__);
+       task_get_info(&task1, &task_info);
+       dump_task_info(&task_info);
+       while(1);
     }
 }
 
@@ -103,10 +103,11 @@ int main()
     init_task_module();
 
     task_init(&task1, task1_entry, (void *)0x11111111, 0, &task1_stk[1024]);
+#if 0
     task_init(&task2, task2_entry, (void *)0x22222222, 1, &task2_stk[1024]);
     task_init(&task3, task3_entry, (void *)0x33333333, 0, &task3_stk[1024]);
     task_init(&task4, task4_entry, (void *)0x44444444, 1, &task4_stk[1024]);
-
+#endif
     g_next_task = task_highest_ready();
     task_run_first();
 

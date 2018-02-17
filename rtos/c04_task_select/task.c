@@ -350,3 +350,25 @@ void task_delete_self(void)
 
     task_exit_critical(status);
 }
+
+void task_get_info(task_t *task, task_info_t *info)
+{
+    uint32_t status = task_enter_critical();
+
+    info->delay_ticks = task->delay_ticks;
+    info->prio = task->prio;
+    info->state = task->state;
+    info->slice = task->slice;
+    info->suspend_cnt = task->suspend_cnt;
+
+    task_exit_critical(status);
+}
+
+void dump_task_info(task_info_t *info)
+{
+    printk("Task info:\n");
+    printk("delay_ticks:%d\n", info->delay_ticks);
+    printk("prio:%d\n", info->prio);
+    printk("slice:%d\n", info->slice);
+    printk("suspend_cnt:%d\n", info->suspend_cnt);
+}
