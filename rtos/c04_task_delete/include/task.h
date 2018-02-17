@@ -26,6 +26,11 @@ typedef struct task_tag {
 
     /*Suspend resume*/
     uint32_t suspend_cnt;
+
+    /*Task delete*/
+    void (*clean)(void *param);
+    void *clean_param;
+    uint8_t request_del_flag;
 }task_t;
 
 extern task_t *g_current_task;
@@ -51,5 +56,11 @@ extern void task_delay_wait(task_t *task, uint32_t ticks);
 extern void task_delay_wakeup(task_t *task);
 extern void task_suspend(task_t *task);
 extern void task_resume(task_t *task);
+extern void task_set_clean_callbk(task_t *task, void (*clean)(void *param), void *param);
+extern void task_force_delete(task_t *task);
+extern void task_request_delete(task_t *task);
+extern uint8_t is_task_request_delete(void);
+extern void task_delete_self(void);
+
 
 #endif /*TASK_H*/

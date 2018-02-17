@@ -53,6 +53,10 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio
 
     /*suspend-resume*/
     task->suspend_cnt = 0;
+
+    task->clean = (void (*)(void *))NULL;
+    task->clean_param = (void *)NULL;
+    task->request_del_flag = 0;
 }
 
 void task_sched()
@@ -222,7 +226,6 @@ void task_unready(task_t *task)
     if (list_count(&g_task_table[task->prio]) == 0) {
         bitmap_clear(&g_task_prio_bitmap, task->prio);
     }
-    bitmap_clear(&g_task_prio_bitmap, task->prio);
 }
 
 void task_delay_wait(task_t *task, uint32_t ticks)
@@ -270,5 +273,80 @@ extern void task_resume(task_t *task)
             task_sched();
         }
     }
+    task_exit_critical(status);
+}
+
+static void task_remove_from_prio_table(task_t *task)
+{
+    list_remove(&g_task_table[task->prio], &(task->prio_list_node));
+    if (list_count(&g_task_table[task->prio]) == 0) {
+        bitmap_clear(&g_task_prio_bitmap, task->prio);
+    }
+}
+
+static void task_remove_from_delay_list(task_t *task)
+{
+    list_remove(&g_task_delay_list, &(task->delay_node));
+}
+
+void task_set_clean_callbk(task_t *task, void (*clean)(void *param), void *param)
+{
+    task->clean = clean;
+    task->clean_param = param;
+}
+
+void task_force_delete(task_t *task)
+{
+    uint32_t status = task_enter_critical();
+
+    if (task->state & OS_TASK_STATE_DELAYED) {
+        task_remove_from_delay_list(task);
+    } else if (!(task->state & OS_TASK_STATE_SUSPEND)) {
+        task_remove_from_prio_table(task);
+    }
+
+    if (task->clean) {
+        task->clean(task->clean_param);
+    }
+
+    if (g_current_task == task) {
+        task_sched();
+    }
+
+    task_exit_critical(status);
+}
+
+void task_request_delete(task_t *task)
+{
+    uint32_t status = task_enter_critical();
+
+    task->request_del_flag = 1;
+
+    task_exit_critical(status);
+}
+
+uint8_t is_task_request_delete()
+{
+    uint8_t delete;
+
+    uint32_t status = task_enter_critical();
+    delete = g_current_task->request_del_flag;
+    task_exit_critical(status);
+
+    return delete;
+}
+
+void task_delete_self(void)
+{
+    uint8_t status = task_enter_critical();
+
+    task_remove_from_prio_table(g_current_task);
+
+    if (g_current_task->clean) {
+        g_current_task->clean(g_current_task->clean_param);
+    }
+
+    task_sched();
+
     task_exit_critical(status);
 }
