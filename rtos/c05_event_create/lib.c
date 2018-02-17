@@ -202,6 +202,7 @@ list_node_t *list_remove_first(list_t *list)
     head = &(list->head);
     ret = head->next;
     if (ret == head) {
+        ret = (list_node_t *)NULL;
         goto cleanup;
     }
 

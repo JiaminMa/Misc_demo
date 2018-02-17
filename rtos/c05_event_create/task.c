@@ -3,6 +3,8 @@
 #include "os_stdio.h"
 #include "lib.h"
 #include "config.h"
+#include "os.h"
+#include "event.h"
 
 task_t *g_current_task;
 task_t *g_next_task;
@@ -57,6 +59,12 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio
     task->clean = (void (*)(void *))NULL;
     task->clean_param = (void *)NULL;
     task->request_del_flag = 0;
+
+    /*Event control block*/
+    task->wait_event = (event_t *)NULL;
+    task->event_msg = (void *)0;
+    task->wait_event_result = NO_ERROR;
+
 }
 
 void task_sched()
@@ -126,6 +134,11 @@ void task_system_tick_handler(void)
         task = container_of(temp_node, task_t, delay_node);
         temp_node = temp_node->next;
         if (--task->delay_ticks == 0) {
+
+            if (task->wait_event != (event_t *)NULL) {
+                event_remove_task(task, (void *)0, ERROR_TIMEOUT);
+            }
+
             /*
              *  1.Remove the task from delay list
              *  2. Add the task to task table

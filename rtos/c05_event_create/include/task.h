@@ -5,9 +5,12 @@
 #include "config.h"
 #include "lib.h"
 
+struct event_tag;
 #define OS_TASK_STATE_RDY                   0
 #define OS_TASK_STATE_DELAYED               (1 << 1)
 #define OS_TASK_STATE_SUSPEND               (1 << 2)
+
+#define OS_TASK_WAIT_MASK                   (0xFF << 16)
 typedef uint32_t task_stack_t;
 /*Task Control block*/
 typedef struct task_tag {
@@ -31,6 +34,12 @@ typedef struct task_tag {
     void (*clean)(void *param);
     void *clean_param;
     uint8_t request_del_flag;
+
+    /*Event control block*/
+    struct event_tag *wait_event;
+    void *event_msg;
+    uint32_t wait_event_result;
+
 }task_t;
 
 typedef struct task_info_tag {
