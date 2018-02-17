@@ -50,6 +50,9 @@ void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio
     list_node_init(&task->prio_list_node);
     list_append_last(&g_task_table[prio], &(task->prio_list_node));
     bitmap_set(&g_task_prio_bitmap, prio);
+
+    /*suspend-resume*/
+    task->suspend_cnt = 0;
 }
 
 void task_sched()
@@ -233,4 +236,39 @@ void task_delay_wakeup(task_t *task)
 {
     list_remove(&g_task_delay_list, &(task->delay_node));
     task->state &= ~OS_TASK_STATE_DELAYED;
+}
+
+void task_suspend(task_t *task)
+{
+    uint32_t status = task_enter_critical();
+
+    /*Don't suspend the task in delay state*/
+    if (!(task->state & OS_TASK_STATE_DELAYED)) {
+        /*If the task is first suspend*/
+        if (task->suspend_cnt++ <= 0) {
+            task->state |= OS_TASK_STATE_SUSPEND;
+
+            task_unready(task);
+            if (task == g_current_task) {
+                task_sched();
+            }
+        }
+
+    }
+
+    task_exit_critical(status);
+}
+
+extern void task_resume(task_t *task)
+{
+    uint32_t status = task_enter_critical();
+
+    if (task->state & OS_TASK_STATE_SUSPEND){
+        if (--task->suspend_cnt == 0) {
+            task->state &= ~OS_TASK_STATE_SUSPEND;
+            task_ready(task);
+            task_sched();
+        }
+    }
+    task_exit_critical(status);
 }

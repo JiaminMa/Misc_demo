@@ -7,7 +7,7 @@
 
 #define OS_TASK_STATE_RDY                   0
 #define OS_TASK_STATE_DELAYED               (1 << 1)
-
+#define OS_TASK_STATE_SUSPEND               (1 << 2)
 typedef uint32_t task_stack_t;
 /*Task Control block*/
 typedef struct task_tag {
@@ -16,11 +16,16 @@ typedef struct task_tag {
     uint32_t delay_ticks;
     uint32_t prio;
 
+    /*Delay list*/
     list_node_t delay_node;
     uint32_t state;
 
+    /*Same prioity slice scheduling*/
     list_node_t prio_list_node;
     uint32_t slice;
+
+    /*Suspend resume*/
+    uint32_t suspend_cnt;
 }task_t;
 
 extern task_t *g_current_task;
@@ -44,5 +49,7 @@ extern void task_ready(task_t *task);
 extern void task_unready(task_t *task);
 extern void task_delay_wait(task_t *task, uint32_t ticks);
 extern void task_delay_wakeup(task_t *task);
+extern void task_suspend(task_t *task);
+extern void task_resume(task_t *task);
 
 #endif /*TASK_H*/
