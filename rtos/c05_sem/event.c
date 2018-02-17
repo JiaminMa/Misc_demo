@@ -24,7 +24,7 @@ void event_wait(event_t *event, task_t *task, void *msg, uint32_t state, uint32_
     task_exit_critical(status);
 }
 
-void event_wakeup(event_t *event, void *msg, uint32_t result)
+task_t *event_wakeup(event_t *event, void *msg, uint32_t result)
 {
     list_node_t *node = (list_node_t *)NULL;
     task_t *task = (task_t *)NULL;
@@ -44,6 +44,7 @@ void event_wakeup(event_t *event, void *msg, uint32_t result)
     }
 
     task_exit_critical(status);
+    return task;
 }
 
 void event_remove_task(task_t *task, void *msg, uint32_t result)
