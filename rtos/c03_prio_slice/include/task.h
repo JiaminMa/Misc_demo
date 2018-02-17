@@ -18,11 +18,14 @@ typedef struct task_tag {
 
     list_node_t delay_node;
     uint32_t state;
+
+    list_node_t prio_list_node;
+    uint32_t slice;
 }task_t;
 
 extern task_t *g_current_task;
 extern task_t *g_next_task;
-extern task_t *g_task_table[OS_PRIO_COUNT];
+extern list_t g_task_table[OS_PRIO_COUNT];
 
 extern void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio, uint32_t * stack);
 extern void task_sched(void);

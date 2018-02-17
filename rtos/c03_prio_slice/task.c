@@ -6,7 +6,7 @@
 
 task_t *g_current_task;
 task_t *g_next_task;
-task_t *g_task_table[OS_PRIO_COUNT];
+list_t g_task_table[OS_PRIO_COUNT];
 static task_t g_idle_task_obj;
 static task_t *g_idle_task;
 static task_stack_t g_idle_task_stk[1024];
@@ -22,31 +22,33 @@ static void idle_task_entry(void *param)
 void task_init (task_t * task, void (*entry)(void *), void *param, uint32_t prio, uint32_t * stack)
 {
     DEBUG("%s\n", __func__);
-    *(--stack) = (uint32_t) (1 << 24);          //XPSR, Thumb Mode
-    *(--stack) = (uint32_t) entry;              //PC
-    *(--stack) = (uint32_t) 0x14;               //LR
-    *(--stack) = (uint32_t) 0x12;               //R12
-    *(--stack) = (uint32_t) 0x3;                //R3
-    *(--stack) = (uint32_t) 0x2;                //R2
-    *(--stack) = (uint32_t) 0x1;                //R1
-    *(--stack) = (uint32_t) param;              //R0
-    *(--stack) = (uint32_t) 0x11;               //R11
-    *(--stack) = (uint32_t) 0x10;               //R10
-    *(--stack) = (uint32_t) 0x9;                //R9
-    *(--stack) = (uint32_t) 0x8;                //R8
-    *(--stack) = (uint32_t) 0x7;                //R7
-    *(--stack) = (uint32_t) 0x6;                //R6
-    *(--stack) = (uint32_t) 0x5;                //R5
-    *(--stack) = (uint32_t) 0x4;                //R4
+    *(--stack) = (uint32_t) (1 << 24);          /*XPSR, Thumb Mode*/
+    *(--stack) = (uint32_t) entry;              /*PC*/
+    *(--stack) = (uint32_t) 14;                 /*LR*/
+    *(--stack) = (uint32_t) 12;                 /*R12*/
+    *(--stack) = (uint32_t) 3;                  /*R3*/
+    *(--stack) = (uint32_t) 2;                  /*R2*/
+    *(--stack) = (uint32_t) 1;                  /*R1*/
+    *(--stack) = (uint32_t) param;              /*R0*/
+    *(--stack) = (uint32_t) 11;                 /*R11*/
+    *(--stack) = (uint32_t) 10;                 /*R10*/
+    *(--stack) = (uint32_t) 9;                  /*R9*/
+    *(--stack) = (uint32_t) 8;                  /*R8*/
+    *(--stack) = (uint32_t) 7;                  /*R7*/
+    *(--stack) = (uint32_t) 6;                  /*R6*/
+    *(--stack) = (uint32_t) 5;                  /*R5*/
+    *(--stack) = (uint32_t) 4;                  /*R4*/
 
     task->stack = stack;
+    /*Delay list*/
     task->delay_ticks = 0;
-    task->prio = prio;
-
     task->state = OS_TASK_STATE_RDY;
     list_node_init(&task->delay_node);
-
-    g_task_table[prio] = task;
+    /*Task table and prio bitmap*/
+    task->prio = prio;
+    task->slice = OS_SLICE_MAX;
+    list_node_init(&task->prio_list_node);
+    list_append_last(&g_task_table[prio], &(task->prio_list_node));
     bitmap_set(&g_task_prio_bitmap, prio);
 }
 
@@ -127,20 +129,34 @@ void task_system_tick_handler(void)
         }
     }
 
+    /*
+     *  check whether the time slice of current task exhausts
+     *  if time slice is over, move the task to the prio list tail
+     */
+    if (--g_current_task->slice == 0) {
+        if (list_count(&g_task_table[g_current_task->prio]) > 0) {
+            list_remove(&g_task_table[g_current_task->prio], &(g_current_task->prio_list_node));
+            list_append_last(&g_task_table[g_current_task->prio], &(g_current_task->prio_list_node));
+            g_current_task->slice = OS_SLICE_MAX;
+        }
+    }
+
     task_exit_critical(status);
     task_sched();
 }
 
 void init_task_module()
 {
+    g_sched_lock = 0;
+    uint32_t i = 0;
+    bitmap_init(&g_task_prio_bitmap);
+    list_init(&g_task_delay_list);
+    for (i = 0; i <OS_PRIO_COUNT; i++) {
+        list_init(&g_task_table[i]);
+    }
+
     task_init(&g_idle_task_obj, idle_task_entry, (void *)0, OS_PRIO_COUNT - 1,  &g_idle_task_stk[1024]);
     g_idle_task = &g_idle_task_obj;
-
-    g_sched_lock = 0;
-    list_init(&g_task_delay_list);
-
-    g_next_task = task_highest_ready();
-    task_run_first();
 }
 
 uint32_t task_enter_critical(void)
@@ -179,19 +195,30 @@ void task_sched_enable(void)
 
 task_t *task_highest_ready()
 {
+    /*
+     *              Highest prio task
+     *                      |
+     * g_task_table[0] -> task -> task -> task;
+     * ....
+     * g_task_table[31] -> task -> task;
+     */
     uint32_t highest_prio = bitmap_get_first_set(&g_task_prio_bitmap);
-    return g_task_table[highest_prio];
+    list_node_t *node = list_head(&(g_task_table[highest_prio]));
+    return container_of(node, task_t, prio_list_node);
 }
 
 void task_ready(task_t *task)
 {
-    g_task_table[task->prio] = task;
+    list_append_last(&g_task_table[task->prio], &(task->prio_list_node));
     bitmap_set(&g_task_prio_bitmap, task->prio);
 }
 
 void task_unready(task_t *task)
 {
-    g_task_table[task->prio] = (task_t *)NULL;
+    list_remove(&g_task_table[task->prio], &(task->prio_list_node));
+    if (list_count(&g_task_table[task->prio]) == 0) {
+        bitmap_clear(&g_task_prio_bitmap, task->prio);
+    }
     bitmap_clear(&g_task_prio_bitmap, task->prio);
 }
 
