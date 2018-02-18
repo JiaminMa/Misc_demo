@@ -2,8 +2,8 @@
 #include <stdint.h>
 #include "cm3.h"
 #include "task.h"
-#include "mailbox.h"
 #include "os.h"
+#include "memblock.h"
 
 extern uint32_t _bss;
 extern uint32_t _ebss;
@@ -26,58 +26,47 @@ task_stack_t task2_stk[1024];
 task_stack_t task3_stk[1024];
 task_stack_t task4_stk[1024];
 
-mbox_t mbox1;
-mbox_t mbox2;
-void *mbox1_msg_buffer[20];
-void *mbox2_msg_buffer[20];
-uint32_t msg[20];
+/*20 block of size 100 bytes*/
+uint8_t mem1[20][100];
+mem_block_t mem_block1;
+typedef uint8_t (*block_t)[100];
 
 void task1_entry(void *param)
 {
-    uint32_t i = 0;
+    uint8_t i;
+    block_t block[20];
     init_systick(10);
 
-    mbox_init(&mbox1, mbox1_msg_buffer, 20);
+    mem_block_init(&mem_block1, (uint8_t *)mem1, 100, 20);
     for(;;) {
-        printk("%s:send mbox\n", __func__);
+        printk("%s:#####1\n",__func__);
         for (i = 0; i < 20; i++) {
-            msg[i] = i;
-            mbox_send(&mbox1, &msg[i], MBOX_SEND_NORMAL);
+            mem_block_alloc(&mem_block1, (uint8_t **)&block[i], 0);
         }
-        task_delay_s(20);
+        task_delay_s(2);
 
-        printk("%s:send mbox front\n", __func__);
+        printk("%s:#####2\n",__func__);
         for (i = 0; i < 20; i++) {
-            msg[i] = i;
-            mbox_send(&mbox1, &msg[i], MBOX_SEND_FRONT);
+            mem_block_free(&mem_block1, (uint8_t *)&block[i]);
         }
-        task_delay_s(20);
+
+        printk("%s\n", __func__);
         task_delay_s(1);
     }
 }
 
 void task2_entry(void *param)
 {
-    void *msg;
-    uint32_t err = 0;
     for(;;) {
-        err = mbox_get(&mbox1, &msg, 10);
-        if (err == NO_ERROR) {
-            uint32_t value = *(uint32_t *)msg;
-            printk("%s:value:%d\n", __func__, value);
-            task_delay_s(1);
-        }
+        block_t block;
+        mem_block_alloc(&mem_block1, (uint8_t **)&block, 0);
+        printk("%s:%x\n", __func__, block);
     }
 }
 
 void task3_entry(void *param)
 {
-    uint32_t msg;
-    init_systick(10);
-    mbox_init(&mbox2, mbox2_msg_buffer, 20);
-    mbox_get(&mbox2, (void *)&msg, 0);
     for(;;) {
-        void *msg;
         printk("%s\n", __func__);
         task_delay_s(1);
     }
@@ -86,14 +75,9 @@ void task3_entry(void *param)
 
 void task4_entry(void *param)
 {
-    int destory_mbox2 = 0;
     for(;;) {
         printk("%s\n", __func__);
         task_delay_s(1);
-        if (destory_mbox2 == 0) {
-            mbox_destory(&mbox2);
-            destory_mbox2 = 1;
-        }
     }
 }
 
@@ -109,10 +93,8 @@ int main()
 
     init_task_module();
 
-#if 0
     task_init(&task1, task1_entry, (void *)0x11111111, 0, &task1_stk[1024]);
     task_init(&task2, task2_entry, (void *)0x22222222, 1, &task2_stk[1024]);
-#endif
     task_init(&task3, task3_entry, (void *)0x33333333, 0, &task3_stk[1024]);
     task_init(&task4, task4_entry, (void *)0x44444444, 1, &task4_stk[1024]);
     g_next_task = task_highest_ready();
