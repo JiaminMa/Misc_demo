@@ -1,0 +1,10 @@
+.cproject
+.project
+.metadata
+bochs.out
+loader.bin
+kernel.bin
+mbr.bin
+hd60M.img
+hd80M.img
+MOS/out
