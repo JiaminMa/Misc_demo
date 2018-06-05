@@ -14,7 +14,7 @@
 #endif
 
 /**
- * @brief   Change the uint64_t to big endian byte array.
+ * @brief   Covert the uint64_t to big endian byte array.
  * @param   input       input uint64_t data
  * @param   output      output big endian byte array
  * @param   idx         idx of the byte array.
@@ -33,7 +33,7 @@ static void inline sha512_encode(uint64_t input, uint8_t *output, uint32_t idx)
 }
 
 /**
- * @brief   Change big endian byte array to uint64_t data
+ * @brief   Covert big endian byte array to uint64_t data
  * @param   output      output uint64_t data
  * @param   input       input big endian byte array
  * @param   idx         idx of the byte array.
