@@ -1,0 +1,828 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AACI_INTR_IRQn	gic.h	/^  AACI_INTR_IRQn      = 43,$/;"	e	enum:IRQn
+ALIGN_BOTTOM_CENTER	ugui.h	167;"	d
+ALIGN_BOTTOM_LEFT	ugui.h	168;"	d
+ALIGN_BOTTOM_RIGHT	ugui.h	166;"	d
+ALIGN_CENTER	ugui.h	170;"	d
+ALIGN_CENTER_LEFT	ugui.h	171;"	d
+ALIGN_CENTER_RIGHT	ugui.h	169;"	d
+ALIGN_H_CENTER	ugui.h	161;"	d
+ALIGN_H_LEFT	ugui.h	160;"	d
+ALIGN_H_RIGHT	ugui.h	162;"	d
+ALIGN_TOP_CENTER	ugui.h	173;"	d
+ALIGN_TOP_LEFT	ugui.h	174;"	d
+ALIGN_TOP_RIGHT	ugui.h	172;"	d
+ALIGN_V_BOTTOM	ugui.h	165;"	d
+ALIGN_V_CENTER	ugui.h	164;"	d
+ALIGN_V_TOP	ugui.h	163;"	d
+BGLoad	sp804.h	/^        uint32_t BGLoad;   \/* +0x18 *\/$/;"	m	struct:__anon16::__anon17
+BMP_BPP_1	ugui.h	241;"	d
+BMP_BPP_16	ugui.h	245;"	d
+BMP_BPP_2	ugui.h	242;"	d
+BMP_BPP_32	ugui.h	246;"	d
+BMP_BPP_4	ugui.h	243;"	d
+BMP_BPP_8	ugui.h	244;"	d
+BMP_RGB555	ugui.h	249;"	d
+BMP_RGB565	ugui.h	248;"	d
+BMP_RGB888	ugui.h	247;"	d
+BTN_EVENT_CLICKED	ugui.h	433;"	d
+BTN_ID_0	ugui.h	400;"	d
+BTN_ID_1	ugui.h	401;"	d
+BTN_ID_10	ugui.h	410;"	d
+BTN_ID_11	ugui.h	411;"	d
+BTN_ID_12	ugui.h	412;"	d
+BTN_ID_13	ugui.h	413;"	d
+BTN_ID_14	ugui.h	414;"	d
+BTN_ID_15	ugui.h	415;"	d
+BTN_ID_16	ugui.h	416;"	d
+BTN_ID_17	ugui.h	417;"	d
+BTN_ID_18	ugui.h	418;"	d
+BTN_ID_19	ugui.h	419;"	d
+BTN_ID_2	ugui.h	402;"	d
+BTN_ID_3	ugui.h	403;"	d
+BTN_ID_4	ugui.h	404;"	d
+BTN_ID_5	ugui.h	405;"	d
+BTN_ID_6	ugui.h	406;"	d
+BTN_ID_7	ugui.h	407;"	d
+BTN_ID_8	ugui.h	408;"	d
+BTN_ID_9	ugui.h	409;"	d
+BTN_STATE_ALWAYS_REDRAW	ugui.h	424;"	d
+BTN_STATE_PRESSED	ugui.h	423;"	d
+BTN_STATE_RELEASED	ugui.h	422;"	d
+BTN_STYLE_2D	ugui.h	427;"	d
+BTN_STYLE_3D	ugui.h	428;"	d
+BTN_STYLE_TOGGLE_COLORS	ugui.h	429;"	d
+BTN_STYLE_USE_ALTERNATE_COLORS	ugui.h	430;"	d
+CLCDINTR_IRQn	gic.h	/^  CLCDINTR_IRQn       = 46,$/;"	e	enum:IRQn
+CR	pl011.h	/^	uint32_t CR;$/;"	m	struct:__anon20
+C_ALICE_BLUE	ugui.h	693;"	d
+C_ANTIQUE_WHITE	ugui.h	661;"	d
+C_AQUA	ugui.h	616;"	d
+C_AQUA_MARINE	ugui.h	623;"	d
+C_AZURE	ugui.h	697;"	d
+C_BEIGE	ugui.h	662;"	d
+C_BISQUE	ugui.h	663;"	d
+C_BLACK	ugui.h	699;"	d
+C_BLANCHED_ALMOND	ugui.h	664;"	d
+C_BLUE	ugui.h	637;"	d
+C_BLUE_VIOLET	ugui.h	639;"	d
+C_BROWN	ugui.h	571;"	d
+C_BURLY_WOOD	ugui.h	675;"	d
+C_CADET_BLUE	ugui.h	625;"	d
+C_CHART_REUSE	ugui.h	597;"	d
+C_CHOCOLATE	ugui.h	672;"	d
+C_CORAL	ugui.h	576;"	d
+C_CORN_FLOWER_BLUE	ugui.h	627;"	d
+C_CORN_SILK	ugui.h	666;"	d
+C_CRIMSON	ugui.h	573;"	d
+C_CYAN	ugui.h	617;"	d
+C_DARK_BLUE	ugui.h	635;"	d
+C_DARK_CYAN	ugui.h	615;"	d
+C_DARK_GOLDEN_ROD	ugui.h	586;"	d
+C_DARK_GRAY	ugui.h	702;"	d
+C_DARK_GREEN	ugui.h	599;"	d
+C_DARK_KHAKI	ugui.h	589;"	d
+C_DARK_MAGENTA	ugui.h	645;"	d
+C_DARK_OLIVE_GREEN	ugui.h	594;"	d
+C_DARK_ORANGE	ugui.h	583;"	d
+C_DARK_ORCHID	ugui.h	647;"	d
+C_DARK_RED	ugui.h	570;"	d
+C_DARK_SALMON	ugui.h	579;"	d
+C_DARK_SEA_GREEN	ugui.h	606;"	d
+C_DARK_SLATE_BLUE	ugui.h	641;"	d
+C_DARK_SLATE_GRAY	ugui.h	613;"	d
+C_DARK_TURQUOISE	ugui.h	619;"	d
+C_DARK_VIOLET	ugui.h	646;"	d
+C_DEEP_PINK	ugui.h	657;"	d
+C_DEEP_SKY_BLUE	ugui.h	628;"	d
+C_DIM_GRAY	ugui.h	700;"	d
+C_DODGER_BLUE	ugui.h	629;"	d
+C_FIREBRICK	ugui.h	572;"	d
+C_FLORAL_WHITE	ugui.h	692;"	d
+C_FOREST_GREEN	ugui.h	601;"	d
+C_GAINSBORO	ugui.h	705;"	d
+C_GHOST_WHITE	ugui.h	694;"	d
+C_GOLD	ugui.h	585;"	d
+C_GOLDEN_ROD	ugui.h	587;"	d
+C_GRAY	ugui.h	701;"	d
+C_GREEN	ugui.h	600;"	d
+C_GREEN_YELLOW	ugui.h	598;"	d
+C_HONEYDEW	ugui.h	695;"	d
+C_HOT_PINK	ugui.h	658;"	d
+C_INDIAN_RED	ugui.h	577;"	d
+C_INDIGO	ugui.h	640;"	d
+C_IVORY	ugui.h	696;"	d
+C_KHAKI	ugui.h	590;"	d
+C_LAVENDER	ugui.h	691;"	d
+C_LAVENDER_BLUSH	ugui.h	682;"	d
+C_LAWN_GREEN	ugui.h	596;"	d
+C_LEMON_CHIFFON	ugui.h	667;"	d
+C_LIGHT_BLUE	ugui.h	630;"	d
+C_LIGHT_CORAL	ugui.h	578;"	d
+C_LIGHT_CYAN	ugui.h	618;"	d
+C_LIGHT_GOLDEN_ROD_YELLOW	ugui.h	668;"	d
+C_LIGHT_GRAY	ugui.h	704;"	d
+C_LIGHT_GREEN	ugui.h	604;"	d
+C_LIGHT_PINK	ugui.h	659;"	d
+C_LIGHT_SALMON	ugui.h	581;"	d
+C_LIGHT_SEA_GREEN	ugui.h	612;"	d
+C_LIGHT_SKY_BLUE	ugui.h	632;"	d
+C_LIGHT_SLATE_GRAY	ugui.h	689;"	d
+C_LIGHT_STEEL_BLUE	ugui.h	690;"	d
+C_LIGHT_YELLOW	ugui.h	669;"	d
+C_LIME	ugui.h	602;"	d
+C_LIME_GREEN	ugui.h	603;"	d
+C_LINEN	ugui.h	683;"	d
+C_MAGENTA	ugui.h	653;"	d
+C_MAROON	ugui.h	569;"	d
+C_MEDIUM_AQUA_MARINE	ugui.h	610;"	d
+C_MEDIUM_BLUE	ugui.h	636;"	d
+C_MEDIUM_ORCHID	ugui.h	648;"	d
+C_MEDIUM_PURPLE	ugui.h	644;"	d
+C_MEDIUM_SEA_GREEN	ugui.h	611;"	d
+C_MEDIUM_SLATE_BLUE	ugui.h	643;"	d
+C_MEDIUM_SPRING_GREEN	ugui.h	607;"	d
+C_MEDIUM_TURQUOISE	ugui.h	621;"	d
+C_MEDIUM_VIOLET_RED	ugui.h	655;"	d
+C_MIDNIGHT_BLUE	ugui.h	633;"	d
+C_MINT_CREAM	ugui.h	687;"	d
+C_MISTY_ROSE	ugui.h	681;"	d
+C_MOCCASIN	ugui.h	678;"	d
+C_NAVAJO_WHITE	ugui.h	679;"	d
+C_NAVY	ugui.h	634;"	d
+C_OLD_LACE	ugui.h	684;"	d
+C_OLIVE	ugui.h	591;"	d
+C_OLIVE_DRAB	ugui.h	595;"	d
+C_ORANGE	ugui.h	584;"	d
+C_ORANGE_RED	ugui.h	582;"	d
+C_ORCHID	ugui.h	654;"	d
+C_PALE_GOLDEN_ROD	ugui.h	588;"	d
+C_PALE_GREEN	ugui.h	605;"	d
+C_PALE_TURQUOISE	ugui.h	622;"	d
+C_PALE_VIOLET_RED	ugui.h	656;"	d
+C_PAPAYA_WHIP	ugui.h	685;"	d
+C_PEACH_PUFF	ugui.h	680;"	d
+C_PERU	ugui.h	673;"	d
+C_PINK	ugui.h	660;"	d
+C_PLUM	ugui.h	651;"	d
+C_POWDER_BLUE	ugui.h	624;"	d
+C_PURPLE	ugui.h	649;"	d
+C_RED	ugui.h	574;"	d
+C_ROSY_BROWN	ugui.h	677;"	d
+C_ROYAL_BLUE	ugui.h	638;"	d
+C_SADDLE_BROWN	ugui.h	670;"	d
+C_SALMON	ugui.h	580;"	d
+C_SANDY_BROWN	ugui.h	674;"	d
+C_SEA_GREEN	ugui.h	609;"	d
+C_SEA_SHELL	ugui.h	686;"	d
+C_SIENNA	ugui.h	671;"	d
+C_SILVER	ugui.h	703;"	d
+C_SKY_BLUE	ugui.h	631;"	d
+C_SLATE_BLUE	ugui.h	642;"	d
+C_SLATE_GRAY	ugui.h	688;"	d
+C_SNOW	ugui.h	698;"	d
+C_SPRING_GREEN	ugui.h	608;"	d
+C_STEEL_BLUE	ugui.h	626;"	d
+C_TAN	ugui.h	676;"	d
+C_TEAL	ugui.h	614;"	d
+C_THISTLE	ugui.h	650;"	d
+C_TOMATO	ugui.h	575;"	d
+C_TURQUOISE	ugui.h	620;"	d
+C_VIOLET	ugui.h	652;"	d
+C_WHEAT	ugui.h	665;"	d
+C_WHITE	ugui.h	707;"	d
+C_WHITE_SMOKE	ugui.h	706;"	d
+C_YELLOW	ugui.h	592;"	d
+C_YELLOW_GREEN	ugui.h	593;"	d
+Control	sp804.h	/^        uint32_t Control;  \/* +0x08 *\/$/;"	m	struct:__anon16::__anon17
+DMACR	pl011.h	/^	uint32_t DMACR;$/;"	m	struct:__anon20
+DR	pl011.h	/^	uint32_t DR;$/;"	m	struct:__anon20
+DRIVER_DRAW_LINE	ugui.h	522;"	d
+DRIVER_ENABLED	ugui.h	518;"	d
+DRIVER_FILL_FRAME	ugui.h	523;"	d
+DRIVER_REGISTERED	ugui.h	517;"	d
+ETH_INTR_IRQn	gic.h	/^  ETH_INTR_IRQn       = 47,$/;"	e	enum:IRQn
+FBRD	pl011.h	/^	uint32_t FBRD;$/;"	m	struct:__anon20
+FONT_10X16	ugui.c	/^   const UG_FONT FONT_10X16 = {(unsigned char*)font_10x16,10,16};$/;"	v
+FONT_12X16	ugui.c	/^   const UG_FONT FONT_12X16 = {(unsigned char*)font_12x16,12,16};$/;"	v
+FONT_12X20	ugui.c	/^   const UG_FONT FONT_12X20 = {(unsigned char*)font_12x20,12,20};$/;"	v
+FONT_16X26	ugui.c	/^   const UG_FONT FONT_16X26 = {(unsigned char*)font_16x26,16,26};$/;"	v
+FONT_22X36	ugui.c	/^   const UG_FONT FONT_22X36 = {(unsigned char*)font_22x36,22,36};$/;"	v
+FONT_24X40	ugui.c	/^   const UG_FONT FONT_24X40 = {(unsigned char*)font_24x40,24,40};$/;"	v
+FONT_32X53	ugui.c	/^   const UG_FONT FONT_32X53 = {(unsigned char*)font_32x53,32,53};$/;"	v
+FONT_4X6	ugui.c	/^   const UG_FONT FONT_4X6 = {(unsigned char*)font_4x6,4,6};$/;"	v
+FONT_5X12	ugui.c	/^   const UG_FONT FONT_5X12 = {(unsigned char*)font_5x12,5,12};$/;"	v
+FONT_5X8	ugui.c	/^   const UG_FONT FONT_5X8 = {(unsigned char*)font_5x8,5,8};$/;"	v
+FONT_6X10	ugui.c	/^   const UG_FONT FONT_6X10 = {(unsigned char*)font_6x10,6,10};$/;"	v
+FONT_6X8	ugui.c	/^   const UG_FONT FONT_6X8 = {(unsigned char*)font_6x8,6,8};$/;"	v
+FONT_7X12	ugui.c	/^   const UG_FONT FONT_7X12 = {(unsigned char*)font_7x12,7,12};$/;"	v
+FONT_8X12	ugui.c	/^   const UG_FONT FONT_8X12 = {(unsigned char*)font_8x12,8,12};$/;"	v
+FONT_8X14	ugui.c	/^   const UG_FONT FONT_8X14 = {(unsigned char*)font_8x14,8,14};$/;"	v
+FONT_8X8	ugui.c	/^   const UG_FONT FONT_8X8 = {(unsigned char*)font_8x8,8,8};$/;"	v
+FR	pl011.h	/^	const uint32_t FR;$/;"	m	struct:__anon20
+GICDistributor	gic.c	39;"	d	file:
+GICDistributor_BASE	gic.c	/^const uint32_t GICDistributor_BASE = GIC_DISTRIBUTOR;$/;"	v
+GICDistributor_Type	gic.h	/^}  GICDistributor_Type;$/;"	t	typeref:struct:__anon18
+GICInterface	gic.c	40;"	d	file:
+GICInterface_BASE	gic.c	/^const uint32_t GICInterface_BASE = GIC_INTERFACE;$/;"	v
+GICInterface_Type	gic.h	/^}  GICInterface_Type;$/;"	t	typeref:struct:__anon19
+GIC_AcknowledgePending	gic.c	/^IRQn_Type GIC_AcknowledgePending(void)$/;"	f
+GIC_CPUInterfaceInit	gic.c	/^void GIC_CPUInterfaceInit(void)$/;"	f
+GIC_ClearPendingIRQ	gic.c	/^void GIC_ClearPendingIRQ(IRQn_Type IRQn)$/;"	f
+GIC_DISTRIBUTOR	gic.h	52;"	d
+GIC_DisableDistributor	gic.c	/^void GIC_DisableDistributor(void)$/;"	f
+GIC_DisableIRQ	gic.c	/^void GIC_DisableIRQ(IRQn_Type IRQn)$/;"	f
+GIC_DisableInterface	gic.c	/^void GIC_DisableInterface(void)$/;"	f
+GIC_DistInit	gic.c	/^void GIC_DistInit(void)$/;"	f
+GIC_DistributorImplementer	gic.c	/^uint32_t GIC_DistributorImplementer(void)$/;"	f
+GIC_DistributorInfo	gic.c	/^uint32_t GIC_DistributorInfo(void)$/;"	f
+GIC_Enable	gic.c	/^void GIC_Enable(void)$/;"	f
+GIC_EnableDistributor	gic.c	/^void GIC_EnableDistributor(void)$/;"	f
+GIC_EnableIRQ	gic.c	/^void GIC_EnableIRQ(IRQn_Type IRQn)$/;"	f
+GIC_EnableInterface	gic.c	/^void GIC_EnableInterface(void)$/;"	f
+GIC_EndInterrupt	gic.c	/^void GIC_EndInterrupt(IRQn_Type IRQn)$/;"	f
+GIC_GetBinaryPoint	gic.c	/^uint32_t GIC_GetBinaryPoint(uint32_t binary_point)$/;"	f
+GIC_GetIRQStatus	gic.c	/^uint32_t GIC_GetIRQStatus(IRQn_Type IRQn)$/;"	f
+GIC_GetPriority	gic.c	/^uint32_t GIC_GetPriority(IRQn_Type IRQn)$/;"	f
+GIC_GetTarget	gic.c	/^uint32_t GIC_GetTarget(IRQn_Type IRQn)$/;"	f
+GIC_INTERFACE	gic.h	51;"	d
+GIC_InterfacePriorityMask	gic.c	/^void GIC_InterfacePriorityMask(uint32_t priority)$/;"	f
+GIC_SendSGI	gic.c	/^void GIC_SendSGI(IRQn_Type IRQn, uint32_t target_list, uint32_t filter_list)$/;"	f
+GIC_SetBinaryPoint	gic.c	/^void GIC_SetBinaryPoint(uint32_t binary_point)$/;"	f
+GIC_SetICDICFR	gic.c	/^void GIC_SetICDICFR (const uint32_t *ICDICFRn)$/;"	f
+GIC_SetLevelModel	gic.c	/^void GIC_SetLevelModel(IRQn_Type IRQn, int8_t edge_level, int8_t model)$/;"	f
+GIC_SetPendingIRQ	gic.c	/^void GIC_SetPendingIRQ(IRQn_Type IRQn)$/;"	f
+GIC_SetPriority	gic.c	/^void GIC_SetPriority(IRQn_Type IRQn, uint32_t priority)$/;"	f
+GIC_SetTarget	gic.c	/^void GIC_SetTarget(IRQn_Type IRQn, uint32_t cpu_target)$/;"	f
+IBRD	pl011.h	/^	uint32_t IBRD;$/;"	m	struct:__anon20
+ICCABPR	gic.h	/^  __IO uint32_t ICCABPR;         \/\/ +0x01C - RW - Aliased Binary Point Register$/;"	m	struct:__anon19
+ICCBPR	gic.h	/^  __IO uint32_t ICCBPR;          \/\/ +0x008 - RW - Binary Point Register$/;"	m	struct:__anon19
+ICCEOIR	gic.h	/^  __IO uint32_t ICCEOIR;         \/\/ +0x010 - WO - End of Interrupt Register$/;"	m	struct:__anon19
+ICCHPIR	gic.h	/^  __I  uint32_t ICCHPIR;         \/\/ +0x018 - RO - Highest Pending Interrupt Register$/;"	m	struct:__anon19
+ICCIAR	gic.h	/^  __I  uint32_t ICCIAR;          \/\/ +0x00C - RO - Interrupt Acknowledge Register$/;"	m	struct:__anon19
+ICCICR	gic.h	/^  __IO uint32_t ICCICR;          \/\/ +0x000 - RW - CPU Interface Control Register$/;"	m	struct:__anon19
+ICCIIDR	gic.h	/^  __I  uint32_t ICCIIDR;         \/\/ +0x0FC - RO - CPU Interface Identification Register$/;"	m	struct:__anon19
+ICCPMR	gic.h	/^  __IO uint32_t ICCPMR;          \/\/ +0x004 - RW - Interrupt Priority Mask Register$/;"	m	struct:__anon19
+ICCRPR	gic.h	/^  __I  uint32_t ICCRPR;          \/\/ +0x014 - RO - Running Priority Register$/;"	m	struct:__anon19
+ICDABR	gic.h	/^  __I  uint32_t ICDABR[32];$/;"	m	struct:__anon18
+ICDDCR	gic.h	/^  __IO uint32_t ICDDCR;$/;"	m	struct:__anon18
+ICDICER	gic.h	/^  __IO uint32_t ICDICER[32];$/;"	m	struct:__anon18
+ICDICFR	gic.h	/^  __IO uint32_t ICDICFR[64];$/;"	m	struct:__anon18
+ICDICPR	gic.h	/^  __IO uint32_t ICDICPR[32];$/;"	m	struct:__anon18
+ICDICTR	gic.h	/^  __I  uint32_t ICDICTR;$/;"	m	struct:__anon18
+ICDIIDR	gic.h	/^  __I  uint32_t ICDIIDR;$/;"	m	struct:__anon18
+ICDIPR	gic.h	/^  __IO uint32_t ICDIPR[256];$/;"	m	struct:__anon18
+ICDIPTR	gic.h	/^  __IO uint32_t ICDIPTR[256];$/;"	m	struct:__anon18
+ICDISER	gic.h	/^  __IO uint32_t ICDISER[32];$/;"	m	struct:__anon18
+ICDISPR	gic.h	/^  __IO uint32_t ICDISPR[32];$/;"	m	struct:__anon18
+ICDISR	gic.h	/^  __IO uint32_t ICDISR[32];$/;"	m	struct:__anon18
+ICDSGIR	gic.h	/^  __IO uint32_t ICDSGIR;$/;"	m	struct:__anon18
+ICR	pl011.h	/^	uint32_t ICR;$/;"	m	struct:__anon20
+IFLS	pl011.h	/^	uint32_t IFLS;$/;"	m	struct:__anon20
+IMG_ID_0	ugui.h	484;"	d
+IMG_ID_1	ugui.h	485;"	d
+IMG_ID_10	ugui.h	494;"	d
+IMG_ID_11	ugui.h	495;"	d
+IMG_ID_12	ugui.h	496;"	d
+IMG_ID_13	ugui.h	497;"	d
+IMG_ID_14	ugui.h	498;"	d
+IMG_ID_15	ugui.h	499;"	d
+IMG_ID_16	ugui.h	500;"	d
+IMG_ID_17	ugui.h	501;"	d
+IMG_ID_18	ugui.h	502;"	d
+IMG_ID_19	ugui.h	503;"	d
+IMG_ID_2	ugui.h	486;"	d
+IMG_ID_3	ugui.h	487;"	d
+IMG_ID_4	ugui.h	488;"	d
+IMG_ID_5	ugui.h	489;"	d
+IMG_ID_6	ugui.h	490;"	d
+IMG_ID_7	ugui.h	491;"	d
+IMG_ID_8	ugui.h	492;"	d
+IMG_ID_9	ugui.h	493;"	d
+IMG_TYPE_BMP	ugui.h	506;"	d
+IMSC	pl011.h	/^	uint32_t IMSC;$/;"	m	struct:__anon20
+IRQn	gic.h	/^typedef enum IRQn{$/;"	g
+IRQn_Type	gic.h	/^} IRQn_Type;$/;"	t	typeref:enum:IRQn
+IntClr	sp804.h	/^        uint32_t IntClr;   \/* +0x0C *\/$/;"	m	struct:__anon16::__anon17
+KMI0_INTR_IRQn	gic.h	/^  KMI0_INTR_IRQn      = 44,$/;"	e	enum:IRQn
+KMI1_INTR_IRQn	gic.h	/^  KMI1_INTR_IRQn      = 45,$/;"	e	enum:IRQn
+KMI_KB_BASE	pl050.h	4;"	d
+LCR_H	pl011.h	/^	uint32_t LCR_H;$/;"	m	struct:__anon20
+LPR	pl011.h	/^	uint32_t LPR;$/;"	m	struct:__anon20
+Load	sp804.h	/^        uint32_t Load;     \/* +0x00 *\/$/;"	m	struct:__anon16::__anon17
+MAXIRQNUM	interrupt.h	5;"	d
+MCI_INTR0_IRQn	gic.h	/^  MCI_INTR0_IRQn      = 41,        $/;"	e	enum:IRQn
+MCI_INTR1_IRQn	gic.h	/^  MCI_INTR1_IRQn      = 42,        $/;"	e	enum:IRQn
+MIS	pl011.h	/^	const uint32_t MIS;$/;"	m	struct:__anon20
+MIS	sp804.h	/^        uint32_t MIS;      \/* +0x14 *\/$/;"	m	struct:__anon16::__anon17
+MSG_TYPE_NONE	ugui.h	265;"	d
+MSG_TYPE_OBJECT	ugui.h	267;"	d
+MSG_TYPE_WINDOW	ugui.h	266;"	d
+NULL	ugui.h	156;"	d
+NUMBER_OF_DRIVERS	ugui.h	521;"	d
+OBJ_EVENT_CLICKED	ugui.h	309;"	d
+OBJ_EVENT_NONE	ugui.h	308;"	d
+OBJ_ID_0	ugui.h	177;"	d
+OBJ_ID_1	ugui.h	178;"	d
+OBJ_ID_10	ugui.h	187;"	d
+OBJ_ID_11	ugui.h	188;"	d
+OBJ_ID_12	ugui.h	189;"	d
+OBJ_ID_13	ugui.h	190;"	d
+OBJ_ID_14	ugui.h	191;"	d
+OBJ_ID_15	ugui.h	192;"	d
+OBJ_ID_16	ugui.h	193;"	d
+OBJ_ID_17	ugui.h	194;"	d
+OBJ_ID_18	ugui.h	195;"	d
+OBJ_ID_19	ugui.h	196;"	d
+OBJ_ID_2	ugui.h	179;"	d
+OBJ_ID_3	ugui.h	180;"	d
+OBJ_ID_4	ugui.h	181;"	d
+OBJ_ID_5	ugui.h	182;"	d
+OBJ_ID_6	ugui.h	183;"	d
+OBJ_ID_7	ugui.h	184;"	d
+OBJ_ID_8	ugui.h	185;"	d
+OBJ_ID_9	ugui.h	186;"	d
+OBJ_STATE_BUSY	ugui.h	314;"	d
+OBJ_STATE_ENABLE	ugui.h	316;"	d
+OBJ_STATE_FREE	ugui.h	312;"	d
+OBJ_STATE_INIT	ugui.h	320;"	d
+OBJ_STATE_REDRAW	ugui.h	318;"	d
+OBJ_STATE_TOUCH_ENABLE	ugui.h	319;"	d
+OBJ_STATE_UPDATE	ugui.h	317;"	d
+OBJ_STATE_VALID	ugui.h	313;"	d
+OBJ_STATE_VISIBLE	ugui.h	315;"	d
+OBJ_TOUCH_STATE_CHANGED	ugui.h	323;"	d
+OBJ_TOUCH_STATE_CLICK_ON_OBJECT	ugui.h	330;"	d
+OBJ_TOUCH_STATE_INIT	ugui.h	331;"	d
+OBJ_TOUCH_STATE_IS_PRESSED	ugui.h	329;"	d
+OBJ_TOUCH_STATE_IS_PRESSED_ON_OBJECT	ugui.h	328;"	d
+OBJ_TOUCH_STATE_PRESSED_ON_OBJECT	ugui.h	324;"	d
+OBJ_TOUCH_STATE_PRESSED_OUTSIDE_OBJECT	ugui.h	325;"	d
+OBJ_TOUCH_STATE_RELEASED_ON_OBJECT	ugui.h	326;"	d
+OBJ_TOUCH_STATE_RELEASED_OUTSIDE_OBJECT	ugui.h	327;"	d
+OBJ_TYPE_BUTTON	ugui.h	303;"	d
+OBJ_TYPE_IMAGE	ugui.h	305;"	d
+OBJ_TYPE_NONE	ugui.h	302;"	d
+OBJ_TYPE_TEXTBOX	ugui.h	304;"	d
+PCIE_GPEN_IRQn	gic.h	/^  PCIE_GPEN_IRQn      = 49$/;"	e	enum:IRQn
+PL111MMIO	pl111.h	/^} PL111MMIO;$/;"	t	typeref:struct:_PL111MMIO
+PL111_CR_EN	pl111.h	6;"	d
+PL111_CR_PWR	pl111.h	7;"	d
+PL111_IOBASE	pl111.h	8;"	d
+PL111_PALBASE	pl111.h	9;"	d
+RESERVED	gic.h	/^       uint32_t RESERVED[55];$/;"	m	struct:__anon19
+RESERVED0	gic.h	/^       uint32_t RESERVED0[29];$/;"	m	struct:__anon18
+RESERVED1	gic.h	/^       uint32_t RESERVED1[32];$/;"	m	struct:__anon18
+RESERVED2	gic.h	/^       uint32_t RESERVED2[128];$/;"	m	struct:__anon18
+RIS	pl011.h	/^	const uint32_t RIS;$/;"	m	struct:__anon20
+RIS	sp804.h	/^        uint32_t RIS;      \/* +0x10 *\/$/;"	m	struct:__anon16::__anon17
+RSR_ECR	pl011.h	/^	uint32_t RSR_ECR;$/;"	m	struct:__anon20
+RTCINTR_IRQn	gic.h	/^  RTCINTR_IRQn        = 36,$/;"	e	enum:IRQn
+RXFE	pl011.h	/^	RXFE = 0x10,$/;"	e	enum:__anon21
+Reserved	sp804.h	/^        uint32_t Reserved; \/* +0x1C *\/$/;"	m	struct:__anon16::__anon17
+SGI0_IRQn	gic.h	/^  SGI0_IRQn           =  0,$/;"	e	enum:IRQn
+SGI10_IRQn	gic.h	/^  SGI10_IRQn          = 10,$/;"	e	enum:IRQn
+SGI11_IRQn	gic.h	/^  SGI11_IRQn          = 11,$/;"	e	enum:IRQn
+SGI12_IRQn	gic.h	/^  SGI12_IRQn          = 12,$/;"	e	enum:IRQn
+SGI13_IRQn	gic.h	/^  SGI13_IRQn          = 13,$/;"	e	enum:IRQn
+SGI14_IRQn	gic.h	/^  SGI14_IRQn          = 14,$/;"	e	enum:IRQn
+SGI15_IRQn	gic.h	/^  SGI15_IRQn          = 15,$/;"	e	enum:IRQn
+SGI1_IRQn	gic.h	/^  SGI1_IRQn           =  1,$/;"	e	enum:IRQn
+SGI2_IRQn	gic.h	/^  SGI2_IRQn           =  2,$/;"	e	enum:IRQn
+SGI3_IRQn	gic.h	/^  SGI3_IRQn           =  3,$/;"	e	enum:IRQn
+SGI4_IRQn	gic.h	/^  SGI4_IRQn           =  4,$/;"	e	enum:IRQn
+SGI5_IRQn	gic.h	/^  SGI5_IRQn           =  5,$/;"	e	enum:IRQn
+SGI6_IRQn	gic.h	/^  SGI6_IRQn           =  6,$/;"	e	enum:IRQn
+SGI7_IRQn	gic.h	/^  SGI7_IRQn           =  7,$/;"	e	enum:IRQn
+SGI8_IRQn	gic.h	/^  SGI8_IRQn           =  8,$/;"	e	enum:IRQn
+SGI9_IRQn	gic.h	/^  SGI9_IRQn           =  9,$/;"	e	enum:IRQn
+SP804_TIMER_32BIT	sp804.h	11;"	d
+SP804_TIMER_ENABLE	sp804.h	5;"	d
+SP804_TIMER_INT_ENABLE	sp804.h	7;"	d
+SP804_TIMER_ONESHOT	sp804.h	12;"	d
+SP804_TIMER_PERIODIC	sp804.h	6;"	d
+SP804_TIMER_PRESCALE_1	sp804.h	8;"	d
+SP804_TIMER_PRESCALE_16	sp804.h	9;"	d
+SP804_TIMER_PRESCALE_256	sp804.h	10;"	d
+SWINT_IRQn	gic.h	/^  SWINT_IRQn          = 33,$/;"	e	enum:IRQn
+S_OBJECT	ugui.h	/^struct S_OBJECT$/;"	s
+S_WINDOW	ugui.h	/^struct S_WINDOW$/;"	s
+TIM01INT_IRQn	gic.h	/^  TIM01INT_IRQn       = 34,$/;"	e	enum:IRQn
+TIM23INT_IRQn	gic.h	/^  TIM23INT_IRQn       = 35,$/;"	e	enum:IRQn
+TIMER_BASE	sp804.h	14;"	d
+TOUCH_STATE_PRESSED	ugui.h	281;"	d
+TOUCH_STATE_RELEASED	ugui.h	282;"	d
+TXB_ID_0	ugui.h	452;"	d
+TXB_ID_1	ugui.h	453;"	d
+TXB_ID_10	ugui.h	462;"	d
+TXB_ID_11	ugui.h	463;"	d
+TXB_ID_12	ugui.h	464;"	d
+TXB_ID_13	ugui.h	465;"	d
+TXB_ID_14	ugui.h	466;"	d
+TXB_ID_15	ugui.h	467;"	d
+TXB_ID_16	ugui.h	468;"	d
+TXB_ID_17	ugui.h	469;"	d
+TXB_ID_18	ugui.h	470;"	d
+TXB_ID_19	ugui.h	471;"	d
+TXB_ID_2	ugui.h	454;"	d
+TXB_ID_3	ugui.h	455;"	d
+TXB_ID_4	ugui.h	456;"	d
+TXB_ID_5	ugui.h	457;"	d
+TXB_ID_6	ugui.h	458;"	d
+TXB_ID_7	ugui.h	459;"	d
+TXB_ID_8	ugui.h	460;"	d
+TXB_ID_9	ugui.h	461;"	d
+TXFF	pl011.h	/^	TXFF = 0x20,$/;"	e	enum:__anon21
+UART0	pl011.c	/^volatile pl011_t* const UART0 = (pl011_t*)UART0_BASE;$/;"	v
+UART0INTR_IRQn	gic.h	/^  UART0INTR_IRQn      = 37,$/;"	e	enum:IRQn
+UART0_BASE	pl011.h	5;"	d
+UART1INTR_IRQn	gic.h	/^  UART1INTR_IRQn      = 38,$/;"	e	enum:IRQn
+UART2INTR_IRQn	gic.h	/^  UART2INTR_IRQn      = 39,$/;"	e	enum:IRQn
+UART3INTR_IRQn	gic.h	/^  UART3INTR_IRQn      = 40,$/;"	e	enum:IRQn
+UG_AREA	ugui.h	/^} UG_AREA;$/;"	t	typeref:struct:__anon3
+UG_BMP	ugui.h	/^} UG_BMP;$/;"	t	typeref:struct:__anon5
+UG_BUTTON	ugui.h	/^}UG_BUTTON;$/;"	t	typeref:struct:__anon9
+UG_ButtonCreate	ugui.c	/^UG_RESULT UG_ButtonCreate( UG_WINDOW* wnd, UG_BUTTON* btn, UG_U8 id, UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye )$/;"	f
+UG_ButtonDelete	ugui.c	/^UG_RESULT UG_ButtonDelete( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetAlternateBackColor	ugui.c	/^UG_COLOR UG_ButtonGetAlternateBackColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetAlternateForeColor	ugui.c	/^UG_COLOR UG_ButtonGetAlternateForeColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetBackColor	ugui.c	/^UG_COLOR UG_ButtonGetBackColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetFont	ugui.c	/^UG_FONT* UG_ButtonGetFont( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetForeColor	ugui.c	/^UG_COLOR UG_ButtonGetForeColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetStyle	ugui.c	/^UG_U8 UG_ButtonGetStyle( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonGetText	ugui.c	/^char* UG_ButtonGetText( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonHide	ugui.c	/^UG_RESULT UG_ButtonHide( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ButtonSetAlternateBackColor	ugui.c	/^UG_RESULT UG_ButtonSetAlternateBackColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR abc )$/;"	f
+UG_ButtonSetAlternateForeColor	ugui.c	/^UG_RESULT UG_ButtonSetAlternateForeColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR afc )$/;"	f
+UG_ButtonSetBackColor	ugui.c	/^UG_RESULT UG_ButtonSetBackColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR bc )$/;"	f
+UG_ButtonSetFont	ugui.c	/^UG_RESULT UG_ButtonSetFont( UG_WINDOW* wnd, UG_U8 id, const UG_FONT* font )$/;"	f
+UG_ButtonSetForeColor	ugui.c	/^UG_RESULT UG_ButtonSetForeColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR fc )$/;"	f
+UG_ButtonSetStyle	ugui.c	/^UG_RESULT UG_ButtonSetStyle( UG_WINDOW* wnd, UG_U8 id, UG_U8 style )$/;"	f
+UG_ButtonSetText	ugui.c	/^UG_RESULT UG_ButtonSetText( UG_WINDOW* wnd, UG_U8 id, char* str )$/;"	f
+UG_ButtonShow	ugui.c	/^UG_RESULT UG_ButtonShow( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_COLOR	ugui.h	/^typedef UG_U32                                        UG_COLOR;$/;"	t
+UG_ConsolePutString	ugui.c	/^void UG_ConsolePutString( char* str )$/;"	f
+UG_ConsoleSetArea	ugui.c	/^void UG_ConsoleSetArea( UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye )$/;"	f
+UG_ConsoleSetBackcolor	ugui.c	/^void UG_ConsoleSetBackcolor( UG_COLOR c )$/;"	f
+UG_ConsoleSetForecolor	ugui.c	/^void UG_ConsoleSetForecolor( UG_COLOR c )$/;"	f
+UG_DRIVER	ugui.h	/^} UG_DRIVER;$/;"	t	typeref:struct:__anon12
+UG_DrawArc	ugui.c	/^void UG_DrawArc( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_U8 s, UG_COLOR c )$/;"	f
+UG_DrawBMP	ugui.c	/^void UG_DrawBMP( UG_S16 xp, UG_S16 yp, UG_BMP* bmp )$/;"	f
+UG_DrawCircle	ugui.c	/^void UG_DrawCircle( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_COLOR c )$/;"	f
+UG_DrawFrame	ugui.c	/^void UG_DrawFrame( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c )$/;"	f
+UG_DrawLine	ugui.c	/^void UG_DrawLine( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c )$/;"	f
+UG_DrawMesh	ugui.c	/^void UG_DrawMesh( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c )$/;"	f
+UG_DrawPixel	ugui.c	/^void UG_DrawPixel( UG_S16 x0, UG_S16 y0, UG_COLOR c )$/;"	f
+UG_DrawRoundFrame	ugui.c	/^void UG_DrawRoundFrame( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_S16 r, UG_COLOR c )$/;"	f
+UG_DriverDisable	ugui.c	/^void UG_DriverDisable( UG_U8 type )$/;"	f
+UG_DriverEnable	ugui.c	/^void UG_DriverEnable( UG_U8 type )$/;"	f
+UG_DriverRegister	ugui.c	/^void UG_DriverRegister( UG_U8 type, void* driver )$/;"	f
+UG_FONT	ugui.h	/^} UG_FONT;$/;"	t	typeref:struct:__anon2
+UG_FillCircle	ugui.c	/^void UG_FillCircle( UG_S16 x0, UG_S16 y0, UG_S16 r, UG_COLOR c )$/;"	f
+UG_FillFrame	ugui.c	/^void UG_FillFrame( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_COLOR c )$/;"	f
+UG_FillRoundFrame	ugui.c	/^void UG_FillRoundFrame( UG_S16 x1, UG_S16 y1, UG_S16 x2, UG_S16 y2, UG_S16 r, UG_COLOR c )$/;"	f
+UG_FillScreen	ugui.c	/^void UG_FillScreen( UG_COLOR c )$/;"	f
+UG_FontSelect	ugui.c	/^void UG_FontSelect( const UG_FONT* font )$/;"	f
+UG_FontSetHSpace	ugui.c	/^void UG_FontSetHSpace( UG_U16 s )$/;"	f
+UG_FontSetVSpace	ugui.c	/^void UG_FontSetVSpace( UG_U16 s )$/;"	f
+UG_GUI	ugui.h	/^} UG_GUI;$/;"	t	typeref:struct:__anon13
+UG_GetXDim	ugui.c	/^UG_S16 UG_GetXDim( void )$/;"	f
+UG_GetYDim	ugui.c	/^UG_S16 UG_GetYDim( void )$/;"	f
+UG_IMAGE	ugui.h	/^} UG_IMAGE;$/;"	t	typeref:struct:__anon11
+UG_ImageCreate	ugui.c	/^UG_RESULT UG_ImageCreate( UG_WINDOW* wnd, UG_IMAGE* img, UG_U8 id, UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye )$/;"	f
+UG_ImageDelete	ugui.c	/^UG_RESULT UG_ImageDelete( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ImageHide	ugui.c	/^UG_RESULT UG_ImageHide( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_ImageSetBMP	ugui.c	/^UG_RESULT UG_ImageSetBMP( UG_WINDOW* wnd, UG_U8 id, const UG_BMP* bmp )$/;"	f
+UG_ImageShow	ugui.c	/^UG_RESULT UG_ImageShow( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_Init	ugui.c	/^UG_S16 UG_Init( UG_GUI* g, void (*p)(UG_S16,UG_S16,UG_COLOR), UG_S16 x, UG_S16 y )$/;"	f
+UG_MESSAGE	ugui.h	/^} UG_MESSAGE;$/;"	t	typeref:struct:__anon6
+UG_OBJECT	ugui.h	/^typedef struct S_OBJECT                               UG_OBJECT;$/;"	t	typeref:struct:S_OBJECT
+UG_PutChar	ugui.c	/^void UG_PutChar( char chr, UG_S16 x, UG_S16 y, UG_COLOR fc, UG_COLOR bc )$/;"	f
+UG_PutString	ugui.c	/^void UG_PutString( UG_S16 x, UG_S16 y, char* str )$/;"	f
+UG_RESULT	ugui.h	/^typedef UG_S8                                         UG_RESULT;$/;"	t
+UG_RESULT_FAIL	ugui.h	201;"	d
+UG_RESULT_OK	ugui.h	202;"	d
+UG_S16	ugui.h	/^typedef int16_t      UG_S16;$/;"	t
+UG_S32	ugui.h	/^typedef int32_t      UG_S32;$/;"	t
+UG_S8	ugui.h	/^typedef int8_t       UG_S8;$/;"	t
+UG_SATUS_WAIT_FOR_UPDATE	ugui.h	563;"	d
+UG_SelectGUI	ugui.c	/^UG_S16 UG_SelectGUI( UG_GUI* g )$/;"	f
+UG_SetBackcolor	ugui.c	/^void UG_SetBackcolor( UG_COLOR c )$/;"	f
+UG_SetForecolor	ugui.c	/^void UG_SetForecolor( UG_COLOR c )$/;"	f
+UG_TEXT	ugui.h	/^} UG_TEXT;$/;"	t	typeref:struct:__anon4
+UG_TEXTBOX	ugui.h	/^} UG_TEXTBOX;$/;"	t	typeref:struct:__anon10
+UG_TITLE	ugui.h	/^} UG_TITLE;$/;"	t	typeref:struct:__anon8
+UG_TOUCH	ugui.h	/^} UG_TOUCH;$/;"	t	typeref:struct:__anon7
+UG_TextboxCreate	ugui.c	/^UG_RESULT UG_TextboxCreate( UG_WINDOW* wnd, UG_TEXTBOX* txb, UG_U8 id, UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye )$/;"	f
+UG_TextboxDelete	ugui.c	/^UG_RESULT UG_TextboxDelete( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetAlignment	ugui.c	/^UG_U8 UG_TextboxGetAlignment( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetBackColor	ugui.c	/^UG_COLOR UG_TextboxGetBackColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetFont	ugui.c	/^UG_FONT* UG_TextboxGetFont( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetForeColor	ugui.c	/^UG_COLOR UG_TextboxGetForeColor( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetHSpace	ugui.c	/^UG_S8 UG_TextboxGetHSpace( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetText	ugui.c	/^char* UG_TextboxGetText( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxGetVSpace	ugui.c	/^UG_S8 UG_TextboxGetVSpace( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxHide	ugui.c	/^UG_RESULT UG_TextboxHide( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TextboxSetAlignment	ugui.c	/^UG_RESULT UG_TextboxSetAlignment( UG_WINDOW* wnd, UG_U8 id, UG_U8 align )$/;"	f
+UG_TextboxSetBackColor	ugui.c	/^UG_RESULT UG_TextboxSetBackColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR bc )$/;"	f
+UG_TextboxSetFont	ugui.c	/^UG_RESULT UG_TextboxSetFont( UG_WINDOW* wnd, UG_U8 id, const UG_FONT* font )$/;"	f
+UG_TextboxSetForeColor	ugui.c	/^UG_RESULT UG_TextboxSetForeColor( UG_WINDOW* wnd, UG_U8 id, UG_COLOR fc )$/;"	f
+UG_TextboxSetHSpace	ugui.c	/^UG_RESULT UG_TextboxSetHSpace( UG_WINDOW* wnd, UG_U8 id, UG_S8 hs )$/;"	f
+UG_TextboxSetText	ugui.c	/^UG_RESULT UG_TextboxSetText( UG_WINDOW* wnd, UG_U8 id, char* str )$/;"	f
+UG_TextboxSetVSpace	ugui.c	/^UG_RESULT UG_TextboxSetVSpace( UG_WINDOW* wnd, UG_U8 id, UG_S8 vs )$/;"	f
+UG_TextboxShow	ugui.c	/^UG_RESULT UG_TextboxShow( UG_WINDOW* wnd, UG_U8 id )$/;"	f
+UG_TouchUpdate	ugui.c	/^void UG_TouchUpdate( UG_S16 xp, UG_S16 yp, UG_U8 state )$/;"	f
+UG_U16	ugui.h	/^typedef uint16_t     UG_U16;$/;"	t
+UG_U32	ugui.h	/^typedef uint32_t     UG_U32;$/;"	t
+UG_U8	ugui.h	/^typedef uint8_t      UG_U8;$/;"	t
+UG_Update	ugui.c	/^void UG_Update( void )$/;"	f
+UG_WINDOW	ugui.h	/^typedef struct S_WINDOW                               UG_WINDOW;$/;"	t	typeref:struct:S_WINDOW
+UG_WaitForUpdate	ugui.c	/^void UG_WaitForUpdate( void )$/;"	f
+UG_WindowAlert	ugui.c	/^UG_RESULT UG_WindowAlert( UG_WINDOW* wnd )$/;"	f
+UG_WindowCreate	ugui.c	/^UG_RESULT UG_WindowCreate( UG_WINDOW* wnd, UG_OBJECT* objlst, UG_U8 objcnt, void (*cb)( UG_MESSAGE* ) )$/;"	f
+UG_WindowDelete	ugui.c	/^UG_RESULT UG_WindowDelete( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetArea	ugui.c	/^UG_RESULT UG_WindowGetArea( UG_WINDOW* wnd, UG_AREA* a )$/;"	f
+UG_WindowGetBackColor	ugui.c	/^UG_COLOR UG_WindowGetBackColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetForeColor	ugui.c	/^UG_COLOR UG_WindowGetForeColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetInnerHeight	ugui.c	/^UG_S16 UG_WindowGetInnerHeight( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetInnerWidth	ugui.c	/^UG_S16 UG_WindowGetInnerWidth( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetOuterHeight	ugui.c	/^UG_S16 UG_WindowGetOuterHeight( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetOuterWidth	ugui.c	/^UG_S16 UG_WindowGetOuterWidth( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetStyle	ugui.c	/^UG_U8 UG_WindowGetStyle( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleColor	ugui.c	/^UG_COLOR UG_WindowGetTitleColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleHeight	ugui.c	/^UG_U8 UG_WindowGetTitleHeight( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleInactiveColor	ugui.c	/^UG_COLOR UG_WindowGetTitleInactiveColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleInactiveTextColor	ugui.c	/^UG_COLOR UG_WindowGetTitleInactiveTextColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleText	ugui.c	/^char* UG_WindowGetTitleText( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleTextAlignment	ugui.c	/^UG_U8 UG_WindowGetTitleTextAlignment( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleTextColor	ugui.c	/^UG_COLOR UG_WindowGetTitleTextColor( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleTextFont	ugui.c	/^UG_FONT* UG_WindowGetTitleTextFont( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleTextHSpace	ugui.c	/^UG_S8 UG_WindowGetTitleTextHSpace( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetTitleTextVSpace	ugui.c	/^UG_S8 UG_WindowGetTitleTextVSpace( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetXEnd	ugui.c	/^UG_S16 UG_WindowGetXEnd( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetXStart	ugui.c	/^UG_S16 UG_WindowGetXStart( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetYEnd	ugui.c	/^UG_S16 UG_WindowGetYEnd( UG_WINDOW* wnd )$/;"	f
+UG_WindowGetYStart	ugui.c	/^UG_S16 UG_WindowGetYStart( UG_WINDOW* wnd )$/;"	f
+UG_WindowHide	ugui.c	/^UG_RESULT UG_WindowHide( UG_WINDOW* wnd )$/;"	f
+UG_WindowResize	ugui.c	/^UG_RESULT UG_WindowResize( UG_WINDOW* wnd, UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye )$/;"	f
+UG_WindowSetBackColor	ugui.c	/^UG_RESULT UG_WindowSetBackColor( UG_WINDOW* wnd, UG_COLOR bc )$/;"	f
+UG_WindowSetForeColor	ugui.c	/^UG_RESULT UG_WindowSetForeColor( UG_WINDOW* wnd, UG_COLOR fc )$/;"	f
+UG_WindowSetStyle	ugui.c	/^UG_RESULT UG_WindowSetStyle( UG_WINDOW* wnd, UG_U8 style )$/;"	f
+UG_WindowSetTitleColor	ugui.c	/^UG_RESULT UG_WindowSetTitleColor( UG_WINDOW* wnd, UG_COLOR c )$/;"	f
+UG_WindowSetTitleHeight	ugui.c	/^UG_RESULT UG_WindowSetTitleHeight( UG_WINDOW* wnd, UG_U8 height )$/;"	f
+UG_WindowSetTitleInactiveColor	ugui.c	/^UG_RESULT UG_WindowSetTitleInactiveColor( UG_WINDOW* wnd, UG_COLOR c )$/;"	f
+UG_WindowSetTitleInactiveTextColor	ugui.c	/^UG_RESULT UG_WindowSetTitleInactiveTextColor( UG_WINDOW* wnd, UG_COLOR c )$/;"	f
+UG_WindowSetTitleText	ugui.c	/^UG_RESULT UG_WindowSetTitleText( UG_WINDOW* wnd, char* str )$/;"	f
+UG_WindowSetTitleTextAlignment	ugui.c	/^UG_RESULT UG_WindowSetTitleTextAlignment( UG_WINDOW* wnd, UG_U8 align )$/;"	f
+UG_WindowSetTitleTextColor	ugui.c	/^UG_RESULT UG_WindowSetTitleTextColor( UG_WINDOW* wnd, UG_COLOR c )$/;"	f
+UG_WindowSetTitleTextFont	ugui.c	/^UG_RESULT UG_WindowSetTitleTextFont( UG_WINDOW* wnd, const UG_FONT* font )$/;"	f
+UG_WindowSetTitleTextHSpace	ugui.c	/^UG_RESULT UG_WindowSetTitleTextHSpace( UG_WINDOW* wnd, UG_S8 hs )$/;"	f
+UG_WindowSetTitleTextVSpace	ugui.c	/^UG_RESULT UG_WindowSetTitleTextVSpace( UG_WINDOW* wnd, UG_S8 vs )$/;"	f
+UG_WindowSetXEnd	ugui.c	/^UG_RESULT UG_WindowSetXEnd( UG_WINDOW* wnd, UG_S16 xe )$/;"	f
+UG_WindowSetXStart	ugui.c	/^UG_RESULT UG_WindowSetXStart( UG_WINDOW* wnd, UG_S16 xs )$/;"	f
+UG_WindowSetYEnd	ugui.c	/^UG_RESULT UG_WindowSetYEnd( UG_WINDOW* wnd, UG_S16 ye )$/;"	f
+UG_WindowSetYStart	ugui.c	/^UG_RESULT UG_WindowSetYStart( UG_WINDOW* wnd, UG_S16 ys )$/;"	f
+UG_WindowShow	ugui.c	/^UG_RESULT UG_WindowShow( UG_WINDOW* wnd )$/;"	f
+USB_INT_IRQn	gic.h	/^  USB_INT_IRQn        = 48, $/;"	e	enum:IRQn
+USE_COLOR_RGB888	ugui.h	35;"	d
+USE_FONT_10X16	ugui.h	51;"	d
+USE_FONT_12X16	ugui.h	52;"	d
+USE_FONT_12X20	ugui.h	53;"	d
+USE_FONT_16X26	ugui.h	54;"	d
+USE_FONT_22X36	ugui.h	55;"	d
+USE_FONT_24X40	ugui.h	56;"	d
+USE_FONT_6X8	ugui.h	45;"	d
+USE_FONT_7X12	ugui.h	47;"	d
+USE_FONT_8X12	ugui.h	49;"	d
+USE_FONT_8X14	ugui.h	50;"	d
+USE_FONT_8X8	ugui.h	48;"	d
+Value	sp804.h	/^        uint32_t Value;    \/* +0x04 *\/$/;"	m	struct:__anon16::__anon17
+WDOG0INT_IRQn	gic.h	/^  WDOG0INT_IRQn       = 32,$/;"	e	enum:IRQn
+WND_STATE_BUSY	ugui.h	371;"	d
+WND_STATE_ENABLE	ugui.h	373;"	d
+WND_STATE_FREE	ugui.h	369;"	d
+WND_STATE_REDRAW_TITLE	ugui.h	375;"	d
+WND_STATE_UPDATE	ugui.h	374;"	d
+WND_STATE_VALID	ugui.h	370;"	d
+WND_STATE_VISIBLE	ugui.h	372;"	d
+WND_STYLE_2D	ugui.h	378;"	d
+WND_STYLE_3D	ugui.h	379;"	d
+WND_STYLE_HIDE_TITLE	ugui.h	380;"	d
+WND_STYLE_SHOW_TITLE	ugui.h	381;"	d
+_PL111MMIO	pl111.h	/^typedef struct _PL111MMIO{$/;"	s
+_Reset	startup.S	/^_Reset:$/;"	l
+_UG_ButtonUpdate	ugui.c	/^void _UG_ButtonUpdate(UG_WINDOW* wnd, UG_OBJECT* obj)$/;"	f
+_UG_DeleteObject	ugui.c	/^UG_RESULT _UG_DeleteObject( UG_WINDOW* wnd, UG_U8 type, UG_U8 id )$/;"	f
+_UG_DrawObjectFrame	ugui.c	/^void _UG_DrawObjectFrame( UG_S16 xs, UG_S16 ys, UG_S16 xe, UG_S16 ye, UG_COLOR* p )$/;"	f
+_UG_GetFreeObject	ugui.c	/^UG_OBJECT* _UG_GetFreeObject( UG_WINDOW* wnd )$/;"	f
+_UG_HandleEvents	ugui.c	/^void _UG_HandleEvents( UG_WINDOW* wnd )$/;"	f
+_UG_ImageUpdate	ugui.c	/^void _UG_ImageUpdate(UG_WINDOW* wnd, UG_OBJECT* obj)$/;"	f
+_UG_ProcessTouchData	ugui.c	/^void _UG_ProcessTouchData( UG_WINDOW* wnd )$/;"	f
+_UG_PutText	ugui.c	/^void _UG_PutText(UG_TEXT* txt)$/;"	f
+_UG_SearchObject	ugui.c	/^UG_OBJECT* _UG_SearchObject( UG_WINDOW* wnd, UG_U8 type, UG_U8 id )$/;"	f
+_UG_TextboxUpdate	ugui.c	/^void _UG_TextboxUpdate(UG_WINDOW* wnd, UG_OBJECT* obj)$/;"	f
+_UG_UpdateObjects	ugui.c	/^void _UG_UpdateObjects( UG_WINDOW* wnd )$/;"	f
+_UG_WindowClear	ugui.c	/^UG_RESULT _UG_WindowClear( UG_WINDOW* wnd )$/;"	f
+_UG_WindowDrawTitle	ugui.c	/^UG_RESULT _UG_WindowDrawTitle( UG_WINDOW* wnd )$/;"	f
+_UG_WindowUpdate	ugui.c	/^void _UG_WindowUpdate( UG_WINDOW* wnd )$/;"	f
+__GIC_H__	gic.h	38;"	d
+__I	gic.h	44;"	d
+__I	gic.h	46;"	d
+__INTERRUPT_H__	interrupt.h	2;"	d
+__IO	gic.h	49;"	d
+__O	gic.h	48;"	d
+__PL011_H__	pl011.h	2;"	d
+__PL050_H__	pl050.h	2;"	d
+__PL111_H__	pl111.h	2;"	d
+__SP804_H__	sp804.h	2;"	d
+__UGUI_H	ugui.h	34;"	d
+__UG_CONST	ugui.h	61;"	d
+_close	syscall.c	/^int _close(int f){$/;"	f
+_exit	syscall.c	/^void _exit(int r){$/;"	f
+_fini	syscall.c	/^int _fini(int i){$/;"	f
+_fstat	syscall.c	/^int _fstat(int f, struct stat* st){$/;"	f
+_isatty	syscall.c	/^int _isatty(int fd){$/;"	f
+_lseek	syscall.c	/^int _lseek(int f, int ptr, int dir){$/;"	f
+_read	syscall.c	/^int _read(int f, char* ptr, int len){$/;"	f
+_sbrk	syscall.c	/^void * _sbrk (ptrdiff_t size)$/;"	f
+_start	syscall.c	/^void _start(void){$/;"	f
+_write	syscall.c	/^int _write(int f, char *ptr, int len){$/;"	f
+a	ugui.h	/^   UG_AREA a;$/;"	m	struct:__anon4
+a_abs	ugui.h	/^   UG_AREA a_abs;                            \/* absolute area of the object                *\/$/;"	m	struct:S_OBJECT
+a_rel	ugui.h	/^   UG_AREA a_rel;                            \/* relative area of the object                *\/$/;"	m	struct:S_OBJECT
+abc	ugui.h	/^   UG_COLOR abc;$/;"	m	struct:__anon9
+active_window	ugui.h	/^   UG_WINDOW* active_window;$/;"	m	struct:__anon13
+afc	ugui.h	/^   UG_COLOR afc;$/;"	m	struct:__anon9
+align	ugui.h	/^   UG_U8 align;$/;"	m	struct:__anon10
+align	ugui.h	/^   UG_U8 align;$/;"	m	struct:__anon4
+align	ugui.h	/^   UG_U8 align;$/;"	m	struct:__anon8
+back_color	ugui.h	/^      UG_COLOR back_color;$/;"	m	struct:__anon13::__anon14
+back_color	ugui.h	/^   UG_COLOR back_color;$/;"	m	struct:__anon13
+bc	ugui.h	/^   UG_COLOR bc;$/;"	m	struct:S_WINDOW
+bc	ugui.h	/^   UG_COLOR bc;$/;"	m	struct:__anon10
+bc	ugui.h	/^   UG_COLOR bc;$/;"	m	struct:__anon4
+bc	ugui.h	/^   UG_COLOR bc;$/;"	m	struct:__anon8
+bc	ugui.h	/^   UG_COLOR bc;$/;"	m	struct:__anon9
+bpp	ugui.h	/^   UG_U8 bpp;$/;"	m	struct:__anon5
+c_fiq	interrupt.c	/^void __attribute__ ((interrupt("FIQ"))) c_fiq(void){$/;"	f
+c_irq	interrupt.c	/^void __attribute__ ((interrupt("IRQ"))) c_irq(void){$/;"	f
+c_svc	interrupt.c	/^void __attribute__ ((interrupt("SWI"))) c_svc(void){$/;"	f
+cb	ugui.h	/^   void (*cb)( UG_MESSAGE* );$/;"	m	struct:S_WINDOW
+char_h_space	ugui.h	/^      UG_S8 char_h_space;$/;"	m	struct:__anon13::__anon15
+char_height	ugui.h	/^      UG_S16 char_height;$/;"	m	struct:__anon13::__anon15
+char_height	ugui.h	/^   UG_S16 char_height;$/;"	m	struct:__anon2
+char_v_space	ugui.h	/^      UG_S8 char_v_space;$/;"	m	struct:__anon13::__anon15
+char_width	ugui.h	/^      UG_S16 char_width;$/;"	m	struct:__anon13::__anon15
+char_width	ugui.h	/^   UG_S16 char_width;$/;"	m	struct:__anon2
+clcd_init	pl111.c	/^void clcd_init(void){$/;"	f
+clk	pl050.h	/^	uint32_t clk;$/;"	m	struct:__anon1
+colors	ugui.h	/^   UG_U8 colors;$/;"	m	struct:__anon5
+console	ugui.h	/^   } console;$/;"	m	struct:__anon13	typeref:struct:__anon13::__anon14
+control	pl111.h	/^	uint32		volatile control;		\/\/18$/;"	m	struct:_PL111MMIO
+counter	sp804.c	/^volatile uint32_t counter;$/;"	v
+cr	pl050.h	/^	uint32_t cr;$/;"	m	struct:__anon1
+data	pl050.h	/^	uint32_t data;$/;"	m	struct:__anon1
+data	ugui.h	/^   void* data;                               \/* pointer to object-specific data            *\/$/;"	m	struct:S_OBJECT
+desktop_color	ugui.h	/^   UG_COLOR desktop_color;$/;"	m	struct:__anon13
+draw_pixel	pl111.c	/^inline static void draw_pixel(uint32 x, uint32 y, uint32 c){$/;"	f	file:
+driver	ugui.h	/^   UG_DRIVER driver[NUMBER_OF_DRIVERS];$/;"	m	struct:__anon13
+driver	ugui.h	/^  void* driver;$/;"	m	struct:__anon12
+enable_irq	interrupt.c	/^void enable_irq(IRQn_Type irq_num){$/;"	f
+event	ugui.h	/^   UG_U8 event;                              \/* object-specific events                     *\/$/;"	m	struct:S_OBJECT
+event	ugui.h	/^   UG_U8 event;$/;"	m	struct:__anon6
+f	pl111.h	/^	uint32		volatile f;		\/\/14$/;"	m	struct:_PL111MMIO
+fb	pl111.c	/^uint32	volatile *fb;$/;"	v
+fc	ugui.h	/^   UG_COLOR fc;$/;"	m	struct:S_WINDOW
+fc	ugui.h	/^   UG_COLOR fc;$/;"	m	struct:__anon10
+fc	ugui.h	/^   UG_COLOR fc;$/;"	m	struct:__anon4
+fc	ugui.h	/^   UG_COLOR fc;$/;"	m	struct:__anon8
+fc	ugui.h	/^   UG_COLOR fc;$/;"	m	struct:__anon9
+font	ugui.h	/^   const UG_FONT* font;$/;"	m	struct:__anon10
+font	ugui.h	/^   const UG_FONT* font;$/;"	m	struct:__anon4
+font	ugui.h	/^   const UG_FONT* font;$/;"	m	struct:__anon8
+font	ugui.h	/^   const UG_FONT* font;$/;"	m	struct:__anon9
+font	ugui.h	/^   } font;$/;"	m	struct:__anon13	typeref:struct:__anon13::__anon15
+font_10x16	ugui.c	/^__UG_CONST unsigned char font_10x16[256][32]={$/;"	v
+font_12x16	ugui.c	/^__UG_CONST unsigned char font_12x16[256][32]={$/;"	v
+font_12x20	ugui.c	/^__UG_CONST unsigned char font_12x20[256][40]={$/;"	v
+font_16x26	ugui.c	/^__UG_CONST unsigned char font_16x26[256][52]={$/;"	v
+font_22x36	ugui.c	/^__UG_CONST unsigned char font_22x36[256][108]={$/;"	v
+font_24x40	ugui.c	/^__UG_CONST unsigned char font_24x40[256][120]={$/;"	v
+font_32x53	ugui.c	/^__UG_CONST unsigned char font_32x53[256][212]={$/;"	v
+font_4x6	ugui.c	/^__UG_CONST unsigned char font_4x6[256][6]={$/;"	v
+font_5x12	ugui.c	/^__UG_CONST unsigned char font_5x12[256][12]={$/;"	v
+font_5x8	ugui.c	/^__UG_CONST unsigned char font_5x8[256][8]={$/;"	v
+font_6x10	ugui.c	/^__UG_CONST unsigned char font_6x10[256][10]={$/;"	v
+font_6x8	ugui.c	/^__UG_CONST unsigned char font_6x8[256][8]={$/;"	v
+font_7x12	ugui.c	/^__UG_CONST unsigned char font_7x12[256][12]={$/;"	v
+font_8x12	ugui.c	/^__UG_CONST unsigned char font_8x12[256][12]={$/;"	v
+font_8x14	ugui.c	/^__UG_CONST unsigned char font_8x14[256][14]={$/;"	v
+font_8x8	ugui.c	/^__UG_CONST unsigned char font_8x8[256][8]={$/;"	v
+fore_color	ugui.h	/^      UG_COLOR fore_color;$/;"	m	struct:__anon13::__anon14
+fore_color	ugui.h	/^   UG_COLOR fore_color;$/;"	m	struct:__anon13
+func_t	interrupt.h	/^typedef void (*func_t)(void);$/;"	t
+g	pl111.h	/^	uint32		volatile g;	\/\/1c$/;"	m	struct:_PL111MMIO
+gui	pl111.c	/^UG_GUI gui;$/;"	v
+gui	ugui.c	/^static UG_GUI* gui;$/;"	v	file:
+h_space	ugui.h	/^   UG_S16 h_space;$/;"	m	struct:__anon4
+h_space	ugui.h	/^   UG_S8 h_space;$/;"	m	struct:__anon10
+h_space	ugui.h	/^   UG_S8 h_space;$/;"	m	struct:__anon8
+height	ugui.h	/^   UG_U16 height;$/;"	m	struct:__anon5
+height	ugui.h	/^   UG_U8 height;$/;"	m	struct:__anon8
+ibc	ugui.h	/^   UG_COLOR ibc;$/;"	m	struct:__anon8
+id	ugui.h	/^   UG_U8 id;                                 \/* object ID                                  *\/$/;"	m	struct:S_OBJECT
+id	ugui.h	/^   UG_U8 id;$/;"	m	struct:__anon6
+ifc	ugui.h	/^   UG_COLOR ifc;$/;"	m	struct:__anon8
+img	ugui.h	/^   void* img;$/;"	m	struct:__anon11
+install_isr	interrupt.c	/^void install_isr(IRQn_Type irq_num, func_t handler){$/;"	f
+interrupt_init	interrupt.c	/^void interrupt_init(void){$/;"	f
+ir	pl050.h	/^	uint32_t ir;$/;"	m	struct:__anon1
+isr_table	interrupt.c	/^func_t isr_table[MAXIRQNUM];$/;"	v
+kb_handler	pl050.c	/^void inline kb_handler(void){$/;"	f
+kb_init	pl050.c	/^void inline kb_init(void){$/;"	f
+kbdus	pl050.c	/^char static kbdus[128] = {$/;"	v	file:
+kmi_kb	pl050.c	/^volatile kmi_t* const kmi_kb = (kmi_t*)(KMI_KB_BASE);$/;"	v
+kmi_t	pl050.h	/^} kmi_t;$/;"	t	typeref:struct:__anon1
+last_window	ugui.h	/^   UG_WINDOW* last_window;$/;"	m	struct:__anon13
+main	kernel.c	/^int main(void){$/;"	f
+next_window	ugui.h	/^   UG_WINDOW* next_window;$/;"	m	struct:__anon13
+objcnt	ugui.h	/^   UG_U8 objcnt;$/;"	m	struct:S_WINDOW
+objlst	ugui.h	/^   UG_OBJECT* objlst;$/;"	m	struct:S_WINDOW
+p	ugui.h	/^      unsigned char* p;$/;"	m	struct:__anon13::__anon15
+p	ugui.h	/^   unsigned char* p;$/;"	m	struct:__anon2
+p	ugui.h	/^   void* p;$/;"	m	struct:__anon5
+pal_button_pressed	ugui.c	/^const UG_COLOR pal_button_pressed[] =$/;"	v
+pal_button_released	ugui.c	/^const UG_COLOR pal_button_released[] =$/;"	v
+pal_window	ugui.c	/^const UG_COLOR pal_window[] =$/;"	v
+pdraw	pl111.c	/^void pdraw(UG_S16 x , UG_S16 y ,UG_COLOR c){$/;"	f
+pl011_t	pl011.h	/^} pl011_t;$/;"	t	typeref:struct:__anon20
+pset	ugui.h	/^   void (*pset)(UG_S16,UG_S16,UG_COLOR);$/;"	m	struct:__anon13
+reserved1	pl011.h	/^	uint8_t reserved1[0x10];$/;"	m	struct:__anon20
+reserved2	pl011.h	/^	uint8_t reserved2[0x4];$/;"	m	struct:__anon20
+reset_handler	startup.S	/^reset_handler:$/;"	l
+src	ugui.h	/^   void* src;$/;"	m	struct:__anon6
+state	ugui.h	/^   UG_U8 state;                              \/* object state                               *\/$/;"	m	struct:S_OBJECT
+state	ugui.h	/^   UG_U8 state;$/;"	m	struct:S_WINDOW
+state	ugui.h	/^   UG_U8 state;$/;"	m	struct:__anon13
+state	ugui.h	/^   UG_U8 state;$/;"	m	struct:__anon7
+state	ugui.h	/^   UG_U8 state;$/;"	m	struct:__anon9
+state	ugui.h	/^  UG_U8 state;$/;"	m	struct:__anon12
+status	pl050.h	/^	uint32_t status;$/;"	m	struct:__anon1
+str	ugui.h	/^   char* str;$/;"	m	struct:__anon10
+str	ugui.h	/^   char* str;$/;"	m	struct:__anon4
+str	ugui.h	/^   char* str;$/;"	m	struct:__anon8
+str	ugui.h	/^   char* str;$/;"	m	struct:__anon9
+style	ugui.h	/^   UG_U8 style;$/;"	m	struct:S_WINDOW
+style	ugui.h	/^   UG_U8 style;$/;"	m	struct:__anon10
+style	ugui.h	/^   UG_U8 style;$/;"	m	struct:__anon9
+sub_id	ugui.h	/^   UG_U8 sub_id;$/;"	m	struct:__anon6
+svc_handler	startup.S	/^svc_handler:$/;"	l
+tim0	pl111.h	/^	uint32		volatile tim0;		\/\/0$/;"	m	struct:_PL111MMIO
+tim1	pl111.h	/^	uint32		volatile tim1;		\/\/4$/;"	m	struct:_PL111MMIO
+tim2	pl111.h	/^	uint32		volatile tim2;		\/\/8$/;"	m	struct:_PL111MMIO
+tim3	pl111.h	/^	uint32		volatile tim3;		\/\/c$/;"	m	struct:_PL111MMIO
+timer804_t	sp804.h	/^} timer804_t;$/;"	t	typeref:struct:__anon16
+timer_handler	sp804.c	/^void timer_handler(void){$/;"	f
+timer_init	sp804.c	/^void timer_init(void){$/;"	f
+timers	sp804.h	/^    } timers[2];$/;"	m	struct:__anon16	typeref:struct:__anon16::__anon17
+title	ugui.h	/^   UG_TITLE title;$/;"	m	struct:S_WINDOW
+touch	ugui.h	/^   UG_TOUCH touch;$/;"	m	struct:__anon13
+touch_state	ugui.h	/^   UG_U8 touch_state;                        \/* object touch state                         *\/$/;"	m	struct:S_OBJECT
+tregs	sp804.c	/^volatile timer804_t* const tregs = (timer804_t*)TIMER_BASE;$/;"	v
+tsc	pl050.c	/^volatile uint8_t tsc; $/;"	v
+type	ugui.h	/^   UG_U8 type;                               \/* object type                                *\/$/;"	m	struct:S_OBJECT
+type	ugui.h	/^   UG_U8 type;$/;"	m	struct:__anon11
+type	ugui.h	/^   UG_U8 type;$/;"	m	struct:__anon6
+uart_putc	pl011.c	/^inline void uart_putc(char c){$/;"	f
+uint16	pl111.h	/^typedef unsigned short		uint16;$/;"	t
+uint32	pl111.h	/^typedef unsigned int		uint32;$/;"	t
+uint8	pl111.h	/^typedef unsigned char		uint8;$/;"	t
+upbase	pl111.h	/^	uint32		volatile upbase;	\/\/10$/;"	m	struct:_PL111MMIO
+update	ugui.h	/^   void (*update) (UG_WINDOW*,UG_OBJECT*);   \/* pointer to object-specific update function *\/$/;"	m	struct:S_OBJECT
+v_space	ugui.h	/^   UG_S16 v_space;$/;"	m	struct:__anon4
+v_space	ugui.h	/^   UG_S8 v_space;$/;"	m	struct:__anon10
+v_space	ugui.h	/^   UG_S8 v_space;$/;"	m	struct:__anon8
+width	ugui.h	/^   UG_U16 width;$/;"	m	struct:__anon5
+x_dim	ugui.h	/^   UG_S16 x_dim;$/;"	m	struct:__anon13
+x_end	ugui.h	/^      UG_S16 x_end;$/;"	m	struct:__anon13::__anon14
+x_pos	ugui.h	/^      UG_S16 x_pos;$/;"	m	struct:__anon13::__anon14
+x_start	ugui.h	/^      UG_S16 x_start;$/;"	m	struct:__anon13::__anon14
+xe	ugui.h	/^   UG_S16 xe;$/;"	m	struct:S_WINDOW
+xe	ugui.h	/^   UG_S16 xe;$/;"	m	struct:__anon3
+xp	ugui.h	/^   UG_S16 xp;$/;"	m	struct:__anon7
+xs	ugui.h	/^   UG_S16 xs;$/;"	m	struct:S_WINDOW
+xs	ugui.h	/^   UG_S16 xs;$/;"	m	struct:__anon3
+y_dim	ugui.h	/^   UG_S16 y_dim;$/;"	m	struct:__anon13
+y_end	ugui.h	/^      UG_S16 y_end;$/;"	m	struct:__anon13::__anon14
+y_pos	ugui.h	/^      UG_S16 y_pos;$/;"	m	struct:__anon13::__anon14
+y_start	ugui.h	/^      UG_S16 y_start;$/;"	m	struct:__anon13::__anon14
+ye	ugui.h	/^   UG_S16 ye;$/;"	m	struct:S_WINDOW
+ye	ugui.h	/^   UG_S16 ye;$/;"	m	struct:__anon3
+yp	ugui.h	/^   UG_S16 yp;$/;"	m	struct:__anon7
+ys	ugui.h	/^   UG_S16 ys;$/;"	m	struct:S_WINDOW
+ys	ugui.h	/^   UG_S16 ys;$/;"	m	struct:__anon3
