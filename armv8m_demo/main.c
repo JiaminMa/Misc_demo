@@ -102,11 +102,14 @@ typedef void (*test_func_t)(void);
 
 void main(void)
 {
-    pal_uart_cmsdk_init(0x50200000);
-    easy_printf("hello cortex m33\n");
+    //pal_uart_cmsdk_init(0x50200000);
+    //easy_printf("hello cortex m33\n");
 
     //test_armv8m_mpu_write();
     //test_armv8m_mpu_overlap();
-    test_armv8m_xn();
+    //test_armv8m_xn();
+typedef void (*test_func_t)(void);
+    test_func_t test_f = (test_func_t )0x30001001;
+    test_f();
     while (1);
 }

@@ -68,6 +68,8 @@ class TEST():
             self.type = self.LPSPI_NOR
         if ('UT-A35-LPSPI' in self.name):
             self.type = self.LPSPI_NOR
+        if ('-LPSPI' in self.name):
+            self.type = self.LPSPI_NOR
         if ('UT-FlexSPI2_NOR' in self.name):
             self.type = self.FLEXSPI_NOR
         if ('UT-FlexSPI0_NOR' in self.name):
@@ -95,6 +97,7 @@ class TEST():
 
 
 def get_test_array(test_array):
+    test_dict = {}
     fp = open('./8ulp_test.html', 'r')
     soup = BeautifulSoup(fp, 'lxml')
     test_item = soup.find('table', class_ = 'sortable sml summary_table')
@@ -132,7 +135,10 @@ def get_test_array(test_array):
             num = len(ls)
             s = ls[num - 1]
             test.log = s
-        test_array.append(test)
+        test_dict[test.name] = test
+
+    for ti in test_dict.values():
+        test_array.append(ti)
 
 def show_result(test_array):
 
@@ -278,16 +284,16 @@ def create_html(test_array):
     html_file.write('<table border="0">\n')
     html_file.write('	<tr>\n')
     html_file.write('		<th>Failed Pattern Name</th>\n')
-    html_file.write('		<th>Owner</th>\n')
-    html_file.write('		<th>Log</th>\n')
+    #html_file.write('		<th>Owner</th>\n')
+    #html_file.write('		<th>Log</th>\n')
     html_file.write('	</tr>\n')
 
     for test in test_array:
         if test.status == 'failed':
             html_file.write('	<tr>\n')
             html_file.write('		<td>{}</td>\n'.format(test.name))
-            html_file.write('		<td>{}</td>\n'.format(test.owner))
-            html_file.write('		<td>{}</td>\n'.format(test.log))
+            #html_file.write('		<td>{}</td>\n'.format(test.owner))
+            #html_file.write('		<td>{}</td>\n'.format(test.log))
             html_file.write('	<tr>\n')
 
     html_file.write('</table>')

@@ -2,7 +2,7 @@
 
 .section .isr_vector
     .long    __StackTop         /* Initial Top of Stack */
-    .long    main
+    .long    test_func + 1
     .long    default_exception_handler
     .long    default_exception_handler
     .long    default_exception_handler
@@ -268,6 +268,11 @@
 .text
 .global test_func
 test_func:
+
+    mov r0, #1
+    sub r0, #0x10
+    add r0, #0x10
+
     push {lr}
     ldr r0, =test_func_print
     blx r0
