@@ -60,7 +60,7 @@ class TEST():
             self.type = self.FLEXSPI_NAND
         if ('Single-FlexSPI2_NAND' in self.name):
             self.type = self.FLEXSPI_NAND
-        if ('UT-FlexSPI1_NAND' in self.name):
+        if ('UT-FlexSPI0_NAND' in self.name):
             self.type = self.FLEXSPI_NAND
         if ('UT-FlexSPI2_NAND' in self.name):
             self.type = self.FLEXSPI_NAND
@@ -92,6 +92,8 @@ class TEST():
             self.type = self.USB
         if ('FUSE_TEST' in self.name):
             self.type = self.FUSE
+        if ('UT-Exception' in self.name):
+            self.type = self.MISC
 
         self.owner = owner_dict[self.name]
 
