@@ -348,3 +348,4 @@ Single_Internal-USDHC0_emmc44-8bit-DDR-A35_ROMAPI,PLANNED_COVERAGE,"EMMC Primary
 UT-FlexSPI2_NOR_Error_Branch_TEST,PLANNED_COVERAGE,"EMMC Primary, secondary and recovery boot fail, boot via USB serial download",,rom_default,,,,,,,,1,,,,,,,,,,Shockley,sys_boot_rtl,sys_boot,,,,,
 UT-FlexSPI0_NOR_Error_Branch_TEST,PLANNED_COVERAGE,"EMMC Primary, secondary and recovery boot fail, boot via USB serial download",,rom_default,,,,,,,,1,,,,,,,,,,Shockley,sys_boot_rtl,sys_boot,,,,,
 UT-Exception,PLANNED_COVERAGE,"EMMC Primary, secondary and recovery boot fail, boot via USB serial download",,rom_default,,,,,,,,1,,,,,,,,,,Shockley,sys_boot_rtl,sys_boot,,,,,
+UT-Exception_A35,PLANNED_COVERAGE,"EMMC Primary, secondary and recovery boot fail, boot via USB serial download",,rom_default,,,,,,,,1,,,,,,,,,,Shockley,sys_boot_rtl,sys_boot,,,,,
