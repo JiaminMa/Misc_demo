@@ -159,9 +159,7 @@ def show_result(test_array):
             elif test.type == TEST.FLEXSPI_NOR:
                 success_array[TEST.FLEXSPI_NOR_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
             elif test.type == TEST.FLEXSPI_NAND:
-                success_array[TEST.FLEXSPI_NAND_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
-            elif test.type == TEST.FLEXSPI_NOR:
-                success_array[TEST.FLEXSPI_NOR_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
+                success_array[TEST.FLEXSPI_NAND_IDX] = success_array[TEST.FLEXSPI_NAND_IDX] + 1
             elif test.type == TEST.LPSPI_NOR:
                 success_array[TEST.LPSPI_NOR_IDX] = success_array[TEST.LPSPI_NOR_IDX] + 1
             elif test.type == TEST.USB:
@@ -181,9 +179,7 @@ def show_result(test_array):
             elif test.type == TEST.FLEXSPI_NOR:
                 failure_array[TEST.FLEXSPI_NOR_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
             elif test.type == TEST.FLEXSPI_NAND:
-                failure_array[TEST.FLEXSPI_NAND_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
-            elif test.type == TEST.FLEXSPI_NOR:
-                failure_array[TEST.FLEXSPI_NOR_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
+                failure_array[TEST.FLEXSPI_NAND_IDX] = failure_array[TEST.FLEXSPI_NAND_IDX] + 1
             elif test.type == TEST.LPSPI_NOR:
                 failure_array[TEST.LPSPI_NOR_IDX] = failure_array[TEST.LPSPI_NOR_IDX] + 1
             elif test.type == TEST.USB:
@@ -198,6 +194,7 @@ def show_result(test_array):
                 failure_array[TEST.UNKNOWN_IDX] = failure_array[TEST.UNKNOWN_IDX] + 1
             fail_cnt = fail_cnt + 1
 
+    print success_array
     lables = ['USDHC', 'FSPI_NOR', 'FSPI_NAND', 'USB', 'SPI-NOR', 'MISC', 'DUAL', 'FUSE']
     colors = ['cornflowerblue','cornflowerblue', 'cornflowerblue','cornflowerblue', 'cornflowerblue', 'cornflowerblue', 'cornflowerblue','cornflowerblue']
     color2 = ['lightpink','lightpink', 'lightpink','lightpink', 'lightpink', 'lightpink', 'lightpink','lightpink']

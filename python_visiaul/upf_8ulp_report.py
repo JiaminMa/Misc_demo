@@ -159,9 +159,7 @@ def show_result(test_array):
             elif test.type == TEST.FLEXSPI_NOR:
                 success_array[TEST.FLEXSPI_NOR_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
             elif test.type == TEST.FLEXSPI_NAND:
-                success_array[TEST.FLEXSPI_NAND_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
-            elif test.type == TEST.FLEXSPI_NOR:
-                success_array[TEST.FLEXSPI_NOR_IDX] = success_array[TEST.FLEXSPI_NOR_IDX] + 1
+                success_array[TEST.FLEXSPI_NAND_IDX] = success_array[TEST.FLEXSPI_NAND_IDX] + 1
             elif test.type == TEST.LPSPI_NOR:
                 success_array[TEST.LPSPI_NOR_IDX] = success_array[TEST.LPSPI_NOR_IDX] + 1
             elif test.type == TEST.USB:
@@ -181,9 +179,7 @@ def show_result(test_array):
             elif test.type == TEST.FLEXSPI_NOR:
                 failure_array[TEST.FLEXSPI_NOR_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
             elif test.type == TEST.FLEXSPI_NAND:
-                failure_array[TEST.FLEXSPI_NAND_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
-            elif test.type == TEST.FLEXSPI_NOR:
-                failure_array[TEST.FLEXSPI_NOR_IDX] = failure_array[TEST.FLEXSPI_NOR_IDX] + 1
+                failure_array[TEST.FLEXSPI_NAND_IDX] = failure_array[TEST.FLEXSPI_NAND_IDX] + 1
             elif test.type == TEST.LPSPI_NOR:
                 failure_array[TEST.LPSPI_NOR_IDX] = failure_array[TEST.LPSPI_NOR_IDX] + 1
             elif test.type == TEST.USB:
@@ -218,7 +214,7 @@ def show_result(test_array):
 
 
     #plt.legend()
-    plt.savefig('overview.png')
+    plt.savefig('overview_upf.png')
     #plt.show()
 
     pie_labels = ['PASS', 'FAIL']
@@ -229,7 +225,7 @@ def show_result(test_array):
     plt.pie(sizes, explode = explode, labels = pie_labels, colors = colors, autopct='%1.1f%%', startangle=50)
     plt.axis('equal')
     plt.title('Pattern Pass Rate')
-    plt.savefig('pass_rate.png')
+    plt.savefig('pass_rate_upf.png')
     print('show_result done')
 
 def get_sys_boot_dict(owner_dict):
@@ -272,11 +268,11 @@ def create_html(test_array):
 
     html = ''
     html = '<div align="left">' \
-            '<img src="overview.png" />' \
+            '<img src="overview_upf.png" />' \
             '</div>' \
             '' \
             '<div align="left">' \
-            '<img src="pass_rate.png" />' \
+            '<img src="pass_rate_upf.png" />' \
             '</div>'
     html_file.write(html)
 
