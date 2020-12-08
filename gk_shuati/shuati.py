@@ -18,7 +18,7 @@ def start_to_answer(q_array):
     for q in q_array:
         print(q.question)
         a = input('输入答案:')
-        a = a.replace('1', 'A').replace('2', 'B').replace('3', 'C').replace('4', 'D').replace('5', 'E')
+        a = a.replace('1', 'A').replace('2', 'B').replace('3', 'C').replace('4', 'D').replace('5', 'E').replace('6', 'F')
         q.your_answer = a
         if a == q.answer:
             q.is_correct = True
