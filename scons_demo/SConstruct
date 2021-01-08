@@ -1,0 +1,31 @@
+import os
+from compiler import *
+
+env = Environment()
+env['LINK'] = DEF_LINK
+env['AS'] = DEF_AS
+env['CC'] = DEF_GCC
+env['OBJCOPY'] = DEF_OBJCOPY
+env['LINKFLAGS'] = DEF_LINKFLAGS
+env.Append(CCFLAGS = DEF_CFLAGS)
+
+#include the subdir
+sub_dirs = [
+        'driver'
+        ]
+
+
+
+env.Object(Glob('*.c'))
+env.Object('boot.s')
+
+src_obj = Glob('*.o')
+for d in sub_dirs:
+    src_obj += SConscript(d + '/SConscript')
+
+env.Program('main.elf', src_obj)
+
+env.Command('main.bin', 'main.elf', env['OBJCOPY'] + ' -O binary -S -R .note -R .comment main.elf main.bin')
+env.Command('main.dis', 'main.elf', 'arm-none-eabi-objdump -S main.elf > main.dis')
+
+

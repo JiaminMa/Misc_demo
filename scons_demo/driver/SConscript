@@ -1,0 +1,23 @@
+from compiler import *
+
+sub_dirs = [
+        'sub_driver'
+        ]
+
+env = Environment()
+env['LINK'] = DEF_LINK
+env['AS'] = DEF_AS
+env['CC'] = DEF_GCC
+env['OBJCOPY'] = DEF_OBJCOPY
+env['LINKFLAGS'] = DEF_LINKFLAGS
+env.Append(CCFLAGS = DEF_CFLAGS)
+
+src = Glob('*.c')
+obj = env.Object(src)
+src_obj = Glob('*.o')
+
+for d in sub_dirs:
+    obj = obj + SConscript(d + '/SConscript')
+
+Return('obj')
+
