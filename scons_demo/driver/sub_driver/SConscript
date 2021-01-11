@@ -1,12 +1,6 @@
 from compiler import *
 
-env = Environment()
-env['LINK'] = DEF_LINK
-env['AS'] = DEF_AS
-env['CC'] = DEF_GCC
-env['OBJCOPY'] = DEF_OBJCOPY
-env['LINKFLAGS'] = DEF_LINKFLAGS
-env.Append(CCFLAGS = DEF_CFLAGS)
+Import('env')
 
 src = Glob('*.c')
 obj = env.Object(src)

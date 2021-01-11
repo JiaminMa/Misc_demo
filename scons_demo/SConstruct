@@ -1,6 +1,7 @@
 import os
 from compiler import *
 
+# Create the enviroment
 env = Environment()
 env['LINK'] = DEF_LINK
 env['AS'] = DEF_AS
@@ -8,6 +9,8 @@ env['CC'] = DEF_GCC
 env['OBJCOPY'] = DEF_OBJCOPY
 env['LINKFLAGS'] = DEF_LINKFLAGS
 env.Append(CCFLAGS = DEF_CFLAGS)
+product = ARGUMENTS.get('PRODUCT', '')
+Export('env')
 
 #include the subdir
 sub_dirs = [
@@ -21,7 +24,7 @@ env.Object('boot.s')
 
 src_obj = Glob('*.o')
 for d in sub_dirs:
-    src_obj += SConscript(d + '/SConscript')
+    src_obj += SConscript(d + '/SConscript', 'env')
 
 env.Program('main.elf', src_obj)
 
