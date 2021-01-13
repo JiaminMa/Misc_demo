@@ -1,0 +1,18 @@
+from compiler import *
+
+sub_dirs = [
+        ]
+
+Import('env')
+src = Glob('*.c')
+obj = env.Object(src)
+
+obj = obj + env.Object(Glob('*.S'))
+
+src_obj = Glob('*.o')
+
+for d in sub_dirs:
+    obj = obj + SConscript(d + '/SConscript', 'env')
+
+Return('obj')
+
