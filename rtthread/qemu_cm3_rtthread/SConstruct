@@ -1,0 +1,37 @@
+import os
+from compiler import *
+
+# Create the enviroment
+env = Environment()
+env['LINK'] = DEF_LINK
+env['AS'] = DEF_AS
+env['CC'] = DEF_GCC
+env['OBJCOPY'] = DEF_OBJCOPY
+env['LINKFLAGS'] = DEF_LINKFLAGS
+env.Append(CCFLAGS = DEF_CFLAGS)
+
+product = ARGUMENTS.get('PRODUCT', '')
+Export('env')
+
+#include the subdir
+sub_dirs = [
+        'bsp/qemu_cm3',
+        'libcpu/arm/cortex-m4',
+        'src'
+        ]
+
+
+
+env.Object(Glob('*.c'))
+env.Object(Glob('*.s'))
+
+src_obj = Glob('*.o')
+for d in sub_dirs:
+    src_obj += SConscript(d + '/SConscript', 'env')
+
+env.Program('rtthread.elf', src_obj)
+
+env.Command('rtthread.bin', 'rtthread.elf', env['OBJCOPY'] + ' -O binary -S -R .note -R .comment rtthread.elf rtthread.bin')
+env.Command('rtthread.dis', 'rtthread.elf', 'arm-none-eabi-objdump -D rtthread.elf > rtthread.dis')
+
+
