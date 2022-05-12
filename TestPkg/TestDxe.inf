@@ -1,0 +1,35 @@
+[Defines] 
+  INF_VERSION = 0x00010006 
+  BASE_NAME = TestDxe 
+  FILE_GUID = 6AE7DE6E-F0AF-485f-9937-EB70FDCFC82F
+  MODULE_TYPE = UEFI_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT = TestDriverEntry 
+  
+[Sources] 
+  TestDxe.c 
+  
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec 
+  MdeModulePkg/MdeModulePkg.dec
+  
+[LibraryClasses]
+  UefiDriverEntryPoint
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  DevicePathLib
+  UefiBootServicesTableLib
+  MemoryAllocationLib
+  UefiLib
+  
+
+[Protocols]
+  gEfiSmbiosProtocolGuid
+
+[Guids]
+  gEfiSmbios3TableGuid
+
+[depex]
+  TRUE
