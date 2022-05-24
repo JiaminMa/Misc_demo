@@ -1,5 +1,7 @@
 #include "TestDxe.h"
 
+EFI_GUID gTestDxeGUID = { 0xbdb38129, 0x4d65, 0x39f4, { 0x72, 0x12, 0x68, 0xcf, 0x5a, 0x19, 0xa, 0xf8 }};
+
 static VOID
 EFIAPI
 TestDxeGetStrArray(UINT8 *StrBegin, UINT8 *StrArr[], UINT32 *StrAreaSize)
@@ -708,10 +710,13 @@ TestDxeDumpSmbiosByEps(IN EFI_SYSTEM_TABLE  *SystemTable)
 }
 
 
+extern EFIAPI EFI_STATUS TestDxeDumpAcpi(VOID);
+
 static EFI_TESTDXE_PROTOCOL mTestDxeProtocol = {
     0x10,
     TestDxeDumpSmbios,
-    TestDxeDumpSmbiosByEps
+    TestDxeDumpSmbiosByEps,
+    TestDxeDumpAcpi
 };
 
 EFI_STATUS

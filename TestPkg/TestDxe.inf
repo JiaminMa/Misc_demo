@@ -7,7 +7,8 @@
   ENTRY_POINT = TestDriverEntry 
   
 [Sources] 
-  TestDxe.c 
+  TestDxe.c
+  TestDxeAcpi.c
   
 [Packages]
   MdePkg/MdePkg.dec
@@ -30,6 +31,8 @@
 
 [Guids]
   gEfiSmbios3TableGuid
+  gEfiAcpiTableGuid
+  gEfiAcpi20TableGuid
 
 [depex]
   TRUE
